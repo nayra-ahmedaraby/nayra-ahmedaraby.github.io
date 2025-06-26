@@ -12,7 +12,7 @@ const Skills = () => {
     {
       icon: <Wrench className="text-purple-400" size={24} />,
       title: "Tools & Platforms",
-      skills: ["TensorFlow", "Power BI", "Git", "VS Code", "Arduino", "Ultrasonic Sensors", "AutoCAD"]
+      skills: ["TensorFlow", "Git", "VS Code", "Arduino", "Ultrasonic Sensors", "AutoCAD"]
     },
     {
       icon: <Brain className="text-green-400" size={24} />,
