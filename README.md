@@ -1,73 +1,112 @@
-# Welcome to your Lovable project
+# 💼 Nayra Ahmed Araby — Data Science & AI Portfolio
 
-## Project info
+Welcome to my personal portfolio website!  
+I’m **Nayra Ahmed**, a top-achieving student in **Data Science & Artificial Intelligence**, passionate about **Computer Vision** and **Robotics**.  
+This site highlights my skills, academic journey, and real-world projects built using modern tools and technologies.
 
-**URL**: https://lovable.dev/projects/8165ca83-fb6a-4a2d-ad10-43dfd5931be2
+---
 
-## How can I edit this code?
+🔗 [Live Demo](https://gleeful-alfajores-e68d95.netlify.app)
+---
 
-There are several ways of editing your application.
+## 🧠 About Me
 
-**Use Lovable**
+🎓 **Student @ SUTech University**  
+📌 **GPA: 4.0** (Top Achiever Award – 2025)  
+📍 **Based in Cairo, Egypt**  
+🔭 **Interests:** Computer Vision, Robotics, AI for Social Good  
+💬 *Fun Fact:* I once built a smart light sensor just to make my room feel more "alive"!
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/8165ca83-fb6a-4a2d-ad10-43dfd5931be2) and start prompting.
+---
 
-Changes made via Lovable will be committed automatically to this repo.
+## 💻 Technical Skills
 
-**Use your preferred IDE**
+### 👩‍💻 Programming Languages
+- Python, Java, HTML, JavaScript, SQL
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### 🛠️ Tools & Platforms
+- TensorFlow, Power BI, Git, VS Code, Arduino, Microsoft Azure AI
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### 🧠 Concepts
+- Machine Learning, Data Analysis, Object-Oriented Programming (OOP), Networking
 
-Follow these steps:
+### 🌍 Languages
+- Arabic (Native), English (B1), French (Intermediate)
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+---
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## 🚀 Key Projects
 
-# Step 3: Install the necessary dependencies.
-npm i
+### 🎓 Student Grade Management System  
+**Tech:** Python, JSON, CSV  
+- Managed student records & grades with export functionality  
+- Reduced manual grade handling by 80%
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+### 📡 Ultrasonic Distance Measurement Device  
+**Tech:** Arduino, Physics  
+- Automated room lighting using ultrasonic motion detection  
+- Reduced energy waste significantly
 
-**Edit a file directly in GitHub**
+### 🛒 Online Shopping Cart Database  
+**Tech:** SQL, PHP, CSS  
+- Built backend system for handling e-commerce transactions  
+- Designed ERD and performed normalization
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### 🚌 Bus Ticket Booking System  
+**Tech:** Java, OOP, GUI  
+- Created a desktop app simulating ticket booking  
+- Designed a clean and intuitive user interface
 
-**Use GitHub Codespaces**
+### 🌐 Simple Web Server  
+**Tech:** Python, Socket Programming, Threading  
+- Built a basic multithreaded server to serve static pages  
+- Added live server status endpoint
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### ♿ SolveThe17 Hackathon Project  
+**Tech:** HTML, JavaScript  
+- Developed a platform for children and individuals with special needs  
+- Recognized for alignment with UN Sustainable Development Goals (SDG)
 
-## What technologies are used for this project?
+---
 
-This project is built with:
+## 📚 Education & Certifications
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+🎓 **BSc in Data Science & Artificial Intelligence**  
+SUTech University – Expected Graduation: 2028  
+⭐ GPA: 4.0  
+🏆 **Top Achiever Award – 2025**
 
-## How can I deploy this project?
+### 📜 Certifications
+- Microsoft AI Skills Fest (AI Foundations, Responsible AI, Azure AI, Power BI, ML Studio)
 
-Simply open [Lovable](https://lovable.dev/projects/8165ca83-fb6a-4a2d-ad10-43dfd5931be2) and click on Share -> Publish.
+### 🧩 Activities
+- Attendee – GDG Cairo (AI & Innovation)
+- Participant – Microsoft AI Skills Fest 2025
+- Competitor – SolveThe17 Hackathon
+- Volunteer & Group Leader – SUTech University
 
-## Can I connect a custom domain to my Lovable project?
+---
 
-Yes, you can!
+## ✉️ Contact Me
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+📧 **Email:** nayraaraby2@gmail.com  
+📞 **Phone:** +20 155 708 4472  
+🌍 **Location:** Badr City, Cairo  
+🔗 **LinkedIn:** [Visit Profile](https://www.linkedin.com/in/nayra-ahmed-841793333)  
+💼 **GitHub:** [@nayra-ahmedaraby](https://github.com/nayra-ahmedaraby)
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+---
+
+## 🔐 Admin Access
+
+This site includes an admin panel for managing submitted messages through the contact form.  
+For security reasons, access is protected with a password.
+
+---
+
+> © 2025 Nayra Ahmed Araby. All rights reserved.
+
+
+
+
+
