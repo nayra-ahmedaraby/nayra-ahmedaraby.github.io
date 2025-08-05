@@ -3,18 +3,19 @@ import { GraduationCap, Award, Calendar } from 'lucide-react';
 
 const Education = () => {
   const certifications = [
-    "AI Foundations",
-    "Responsible AI",
-    "Azure AI",
-    "Power BI",
-    "ML Studio"
+    "Introduction to Generative AI with AWS – Amazon & Udacity",
+    "Microsoft AI Skills Fest (2025)",
+    "Responsible & Ethical AI",
+    "Introduction to Data Science",
+    "Sustainability for Employability – United Nations"
   ];
 
   const activities = [
-    "Attendee – GDG Cairo (AI & Innovation Sessions)",
-    "Participant – Microsoft AI Skills Fest 2025",
-    "Competitor – SolveThe17 Hackathon – EUI University",
-    "Volunteer & Group Leader – SUTech University"
+    "Aspire Leaders Program – Harvard-affiliated (Ongoing)",
+    "InnovEgypt Program – TIEC & iSpark (Ongoing)",
+    "Arab International Optronics – Internship (Accepted)",
+    "AIESEC Youth Exchange (Exploratory Experience)",
+    "WHCL Competition – Finalist with ProofMe project"
   ];
 
   return (
@@ -56,16 +57,11 @@ const Education = () => {
               <div className="bg-gold-500/20 text-yellow-400 px-3 py-2 rounded-lg text-center font-semibold mb-4">
                 🏆 Top Achiever Award - 2025
               </div>
-              <div className="space-y-3">
-                <div className="bg-gold-500/20 text-yellow-400 px-3 py-2 rounded-lg text-center font-semibold mb-4">
-                  📍Microsoft AI Skills Fest 2025:
+              {certifications.map((cert, index) => (
+                <div key={index} className="text-gray-300 text-sm">
+                  • {cert}
                 </div>
-                {certifications.map((cert, index) => (
-                  <div key={index} className="text-gray-300 text-sm">
-                    • {cert}
-                  </div>
-                ))}
-              </div>
+              ))}
             </div>
           </div>
           
@@ -73,7 +69,7 @@ const Education = () => {
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
             <div className="flex items-center gap-3 mb-6">
               <Award className="text-green-400" size={24} />
-              <h3 className="text-2xl font-semibold text-white">Activities</h3>
+              <h3 className="text-2xl font-semibold text-white">Programs & Internships</h3>
             </div>
             
             <div className="space-y-3">
@@ -85,10 +81,11 @@ const Education = () => {
             </div>
             
             <div className="mt-6 p-4 bg-blue-500/20 rounded-lg">
-              <h4 className="text-blue-400 font-semibold mb-2">Currently Learning</h4>
+              <h4 className="text-blue-400 font-semibold mb-2">Focus Areas</h4>
               <p className="text-gray-300 text-sm">
-                📚 Computer Vision & Robotics<br/>
-                📌 Advanced AI, Deep Learning, Python for AI Certifications
+                🤖 Generative AI & Machine Learning<br/>
+                💼 Leadership & Innovation<br/>
+                🔬 Computer Vision & Applied Technology
               </p>
             </div>
           </div>

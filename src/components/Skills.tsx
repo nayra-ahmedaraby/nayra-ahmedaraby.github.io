@@ -7,22 +7,22 @@ const Skills = () => {
     {
       icon: <Code className="text-blue-400" size={24} />,
       title: "Programming",
-      skills: ["Python", "Java", "HTML", "JavaScript", "SQL", "PHP"]
+      skills: ["Python", "Java", "HTML", "JavaScript", "SQL", "Git", "Arduino"]
     },
     {
       icon: <Wrench className="text-purple-400" size={24} />,
       title: "Tools & Platforms",
-      skills: ["TensorFlow", "Git", "VS Code", "Arduino", "Ultrasonic Sensors", "AutoCAD"]
+      skills: ["TensorFlow", "VS Code", "AWS", "Generative AI", "PartyRock", "Ultrasonic Sensors"]
     },
     {
       icon: <Brain className="text-green-400" size={24} />,
       title: "Concepts",
-      skills: ["Machine Learning", "OOP", "Database", "Network"]
+      skills: ["Machine Learning", "Deep Learning", "LLMs", "OOP", "Databases", "Networking"]
     },
     {
       icon: <Database className="text-orange-400" size={24} />,
-      title: "Interests",
-      skills: ["Computer Vision", "Robotics"]
+      title: "Soft Skills",
+      skills: ["Leadership", "Teamwork", "Public Speaking", "Project Management"]
     }
   ];
 

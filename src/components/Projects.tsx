@@ -5,6 +5,20 @@ import { ExternalLink, Github, Award } from 'lucide-react';
 const Projects = () => {
   const projects = [
     {
+      title: "Amazon PartyRock – AI Productivity Coach",
+      tech: "Generative AI, Web Development",
+      description: "Created a generative AI web app that offers students daily tips, suggests job matches, and builds CVs based on user skills.",
+      impact: "AI-Powered Career Guidance",
+      githubUrl: "https://github.com/nayra-ahmedaraby/AI-Productivity-Coach"
+    },
+    {
+      title: "WHCL Competition – ProofMe Project",
+      tech: "AI, Computer Vision, Web Development",
+      description: "A platform that verifies ownership of user-uploaded images and videos, protecting users from AI deepfakes and misuse. Finalist project.",
+      impact: "AI Security & Protection",
+      githubUrl: "https://github.com/nayra-ahmedaraby/ProofMe"
+    },
+    {
       title: "Student Grade Management System",
       tech: "Python, JSON, CSV",
       description: "Built a system to manage student records, grades, and GPA with easy data export. Designed to mimic real academic workflows.",
