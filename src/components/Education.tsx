@@ -12,8 +12,8 @@ const Education = () => {
 
   const activities = [
     "Aspire Leaders Program – Harvard-affiliated (Ongoing)",
-    "InnovEgypt Program – TIEC & iSpark (Ongoing)",
-    "Arab International Optronics – Internship (Accepted)",
+    "InnovEgypt Program – TIEC & iSpark ",
+    "E-Finance – Internship (Accepted)",
     "AIESEC Youth Exchange (Exploratory Experience)",
     "WHCL Competition – Finalist with ProofMe project"
   ];
