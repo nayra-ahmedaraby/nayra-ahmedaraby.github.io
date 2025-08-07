@@ -53,15 +53,19 @@ const Education = () => {
             </div>
             <div className="space-y-4">
               <h4 className="text-xl text-blue-400 font-semibold">SUTech University</h4>
-              <p className="text-gray-300">BSc in Data Science & Artificial Intelligence</p>
-              <div className="flex items-center gap-2 text-gray-300">
-                <Calendar size={16} />
-                <span>Expected Graduation: 2028</span>
-              </div>
-              <div className="bg-gradient-to-r from-blue-400 to-purple-400 text-white px-4 py-2 rounded-full text-center font-bold">
-                GPA: 4.0
-              </div>
+               <p className="text-gray-300">BSc in Data Science & Artificial Intelligence</p>
+                  <p className="text-gray-400 text-sm">
+                      🎓 Joint academic partnership with <span className="text-white font-medium">Amity University</span>, India.<br/>
+    Will receive an additional certified degree upon graduation.
+              </p>
+                 <div className="flex items-center gap-2 text-gray-300">
+            <Calendar size={16} />
+          <span>Expected Graduation: 2028</span>
+                </div>
+  <div className="bg-gradient-to-r from-blue-400 to-purple-400 text-white px-4 py-2 rounded-full text-center font-bold">
+    GPA: 4.0
             </div>
+           </div>
           </div>
 
           {/* Certifications */}
