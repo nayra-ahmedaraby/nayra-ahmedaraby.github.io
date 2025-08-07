@@ -14,6 +14,7 @@ const Education = () => {
     "Attendee – GDG Cairo (AI & Innovation Sessions)",
     "Participant – Microsoft AI Skills Fest 2025",
     "Competitor – SolveThe17 Hackathon – EUI University",
+    "WHCL Competition – Finalist with “ProofMe” project",
     "Volunteer & Group Leader – SUTech University"
   ];
 
@@ -23,20 +24,16 @@ const Education = () => {
       description: "Selected participant in a global leadership and personal development program focused on social impact and innovation."
     },
     {
-      title: "InnovEgypt Program – TIEC & iSpark (Ongoing)",
+      title: "InnovEgypt Program – TIEC & iSpark",
       description: "Innovation and entrepreneurship bootcamp to empower students with creative problem-solving and startup building tools."
     },
     {
-      title: "Arab International Optronics – Internship (Accepted)",
+      title: "ُE-Finance – Internship (ongoing)",
       description: "Upcoming technical internship focusing on applied tech and hands-on industry experience."
     },
     {
       title: "AIESEC Youth Exchange (Exploratory Experience)",
       description: "Participated in a short-term exchange program focusing on leadership and cultural learning."
-    },
-    {
-      title: "WHCL Competition – Finalist with “ProofMe” project",
-      description: "A platform that verifies ownership of user-uploaded images and videos, protecting users from AI deepfakes and misuse."
     }
   ];
 
