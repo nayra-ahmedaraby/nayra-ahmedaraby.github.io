@@ -9,8 +9,8 @@ const Hero = () => {
 
   const downloadCV = () => {
     const link = document.createElement('a');
-    link.href = '/nayra_cv.pdf';
-    link.download = 'nayra_cv.pdf';
+    link.href = '/Nayra_Ahmed_Araby_Updated_CV.docx';
+    link.download = 'Nayra_Ahmed_Araby_Updated_CV.docx';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

@@ -11,6 +11,14 @@ const Education = () => {
   ];
 
   const activities = [
+    "Introduction to Generative AI with AWS – Amazon & Udacity",
+    "Microsoft AI Skills Fest (2025)",
+    "Responsible & Ethical AI",
+    "Introduction to Data Science",
+    "Sustainability for Employability – United Nations"
+  ];
+
+  const activities = [
     "Attendee – GDG Cairo (AI & Innovation Sessions)",
     "Participant – Microsoft AI Skills Fest 2025",
     "Competitor – SolveThe17 Hackathon – EUI University",
