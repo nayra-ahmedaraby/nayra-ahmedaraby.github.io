@@ -11,14 +11,19 @@ const Education = () => {
   ];
 
   const activities = [
+    "Organizing – the Third Financial Inclusion, Digitalization & AI Summit 2025,by FDAI under the Ministry of Youth and Sports. "
     "Attendee – GDG Cairo (AI & Innovation Sessions)",
     "Participant – Microsoft AI Skills Fest 2025",
     "Competitor – SolveThe17 Hackathon – EUI University",
-    "WHCL Competition – Finalist with “ProofMe” project",
+    "WHCL Competition – Finalist(4th place) with “ProofMe” project",
     "Volunteer & Group Leader – SUTech University"
   ];
 
   const programs = [
+    {
+      title: "FDAI – Ministry of Youth and Sports",
+      description: "Member AI Committee- Collaborated with peers on projects and activities related to artificial intelligence"
+    },
     {
       title: "Aspire Leaders Program – Harvard-affiliated (Ongoing)",
       description: "Selected participant in a global leadership and personal development program focused on social impact and innovation."
@@ -28,8 +33,8 @@ const Education = () => {
       description: "Innovation and entrepreneurship bootcamp to empower students with creative problem-solving and startup building tools."
     },
     {
-      title: "ُE-Finance – Internship (ongoing)",
-      description: "Upcoming technical internship focusing on applied tech and hands-on industry experience."
+      title: "E-Finance – Internship ",
+      description: "technical internship focusing on applied tech and hands-on industry experience."
     },
     {
       title: "AIESEC Youth Exchange (Exploratory Experience)",
@@ -117,7 +122,7 @@ const Education = () => {
             <div className="space-y-5">
               {programs.map((item, index) => (
                 <div key={index}>
-                  <h4 className="text-sm font-semibold text-orange-300">• {item.title}</h4>
+                  <h4 className="text-sm font-semibold text-orange-250">• {item.title}</h4>
                   <p className="text-gray-400 text-xs pl-4">{item.description}</p>
                 </div>
               ))}
