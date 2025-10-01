@@ -122,7 +122,7 @@ const Education = () => {
             <div className="space-y-5">
               {programs.map((item, index) => (
                 <div key={index}>
-                  <h4 className="text-sm font-semibold text-orange-250">• {item.title}</h4>
+                  <h4 className="text-sm font-semibold text-orange-300">• {item.title}</h4>
                   <p className="text-gray-400 text-xs pl-4">{item.description}</p>
                 </div>
               ))}
