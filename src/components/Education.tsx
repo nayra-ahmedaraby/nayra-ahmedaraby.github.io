@@ -11,7 +11,7 @@ const Education = () => {
   ];
 
   const activities = [
-    "Organizing – the Third Financial Inclusion, Digitalization & AI Summit 2025,by FDAI under the Ministry of Youth and Sports. "
+    "Organizing – the Third Financial Inclusion, Digitalization & AI Summit 2025,by FDAI under the Ministry of Youth and Sports.",
     "Attendee – GDG Cairo (AI & Innovation Sessions)",
     "Participant – Microsoft AI Skills Fest 2025",
     "Competitor – SolveThe17 Hackathon – EUI University",
