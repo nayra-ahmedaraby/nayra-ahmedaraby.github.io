@@ -13,6 +13,7 @@ const Hero = () => {
     link.download = 'Nayra Ahmed Araby Abdo.pdf';
     document.body.appendChild(link);
     link.click();
+    
     document.body.removeChild(link);
   };
 
