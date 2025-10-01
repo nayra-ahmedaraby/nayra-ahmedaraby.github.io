@@ -12,12 +12,12 @@ const Skills = () => {
     {
       icon: <Wrench className="text-purple-400" size={24} />,
       title: "Tools & Platforms",
-      skills: ["TensorFlow", "VS Code", "AWS", "Generative AI", "PartyRock", "Ultrasonic Sensors"]
+      skills: ["TensorFlow", "VS Code", "AWS", "Generative AI", "PartyRock", "Ultrasonic Sensors", "Power-BI"]
     },
     {
       icon: <Brain className="text-green-400" size={24} />,
       title: "Concepts",
-      skills: ["Machine Learning", "Deep Learning", "LLMs", "OOP", "Databases", "Networking"]
+      skills: ["Machine Learning",  "LLMs", "OOP", "Databases", "Networking", "Data Visualization"]
     },
     {
       icon: <Database className="text-orange-400" size={24} />,
