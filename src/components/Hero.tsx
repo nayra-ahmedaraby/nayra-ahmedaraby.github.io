@@ -35,7 +35,7 @@ const Hero = () => {
           </h1>
           
           <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
-            Data Science & AI Student | Computer Vision Enthusiast | 
+            Data Science & AI Student | ML, Deep Learning & LLMs | 
             <span className="text-blue-400 font-semibold"> GPA 4.0 Top Achiever</span>
           </p>
           

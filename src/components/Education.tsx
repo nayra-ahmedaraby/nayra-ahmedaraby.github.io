@@ -81,7 +81,7 @@ const Education = () => {
             </div>
             <div className="space-y-3">
               <div className="bg-gold-500/20 text-yellow-400 px-3 py-2 rounded-lg text-center font-semibold mb-4">
-                🏆 Top Achiever Award - 2025
+                🏆 Top Achiever Award – 2024, 2025
               </div>
               {certifications.map((cert, index) => (
                 <div key={index} className="text-gray-300 text-sm">

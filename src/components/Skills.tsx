@@ -7,7 +7,7 @@ const Skills = () => {
     {
       icon: <Code className="text-blue-400" size={24} />,
       title: "Programming",
-      skills: ["Python", "Java", "HTML", "JavaScript", "SQL", "Git", "Arduino"]
+      skills: ["Python", "Java", "HTML", "JavaScript", "CSS", "PHP", "SQL", "Git", "Arduino"]
     },
     {
       icon: <Wrench className="text-purple-400" size={24} />,
@@ -17,7 +17,7 @@ const Skills = () => {
     {
       icon: <Brain className="text-green-400" size={24} />,
       title: "Concepts",
-      skills: ["Machine Learning",  "LLMs", "OOP", "Databases", "Networking", "Data Visualization"]
+      skills: ["Machine Learning", "LLMs", "OOP", "Databases", "Data Structure", "Networking", "Data Analytics & Visualization"]
     },
     {
       icon: <Database className="text-orange-400" size={24} />,

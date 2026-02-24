@@ -18,9 +18,10 @@ const About = () => {
                 <h3 className="text-2xl font-semibold text-white">Career Objective</h3>
               </div>
               <p className="text-gray-300 leading-relaxed">
-                Data Science & AI student with strong academic excellence (GPA 4.0) and practical 
-                experience in real-world projects. Passionate about applying AI in Computer Vision 
-                and Robotics, with a proven ability to lead teams and deliver impactful solutions.
+                Second-year AI & Data Science student with a 4.0 CGPA and practical experience in AI tools, 
+                leadership, and innovation. Passionate about leveraging technology for social impact through 
+                machine learning, deep learning, and large language models. Actively involved in national tech 
+                programs and real-world AI projects.
               </p>
             </div>
             
@@ -65,6 +66,15 @@ const About = () => {
                 <div>
                   <div className="flex justify-between mb-2">
                     <span className="text-gray-300">French</span>
+                    <span className="text-blue-400">Intermediate</span>
+                  </div>
+                  <div className="w-full bg-gray-700 rounded-full h-2">
+                    <div className="bg-blue-400 h-2 rounded-full w-2/3"></div>
+                  </div>
+                </div>
+                <div>
+                  <div className="flex justify-between mb-2">
+                    <span className="text-gray-300">German</span>
                     <span className="text-blue-400">Intermediate</span>
                   </div>
                   <div className="w-full bg-gray-700 rounded-full h-2">

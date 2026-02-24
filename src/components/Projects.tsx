@@ -59,6 +59,41 @@ const Projects = () => {
       description: "Developed a platform for people with special needs and Kids. Won praise for aligning with Sustainable Development Goals.",
       impact: "SDG Alignment",
       githubUrl: "https://github.com/nayra-ahmedaraby/SolveThe17-Hackathon"
+    },
+    {
+      title: "CyberNest SOAR – AI Vulnerability Engine",
+      tech: "AI, SSVC, EPSS, Automation",
+      description: "Developed an AI-driven vulnerability prioritization and patch recommendation engine integrating SSVC and EPSS to enhance automated incident response and risk-based decision-making.",
+      impact: "Automated Security Response",
+      githubUrl: "https://github.com/nayra-ahmedaraby"
+    },
+    {
+      title: "Project Management Dashboard",
+      tech: "PHP, MySQL, JavaScript",
+      description: "Built a full-stack project management system featuring Kanban board, task tracking, role-based access control, and deadline management.",
+      impact: "Full-Stack Productivity Tool",
+      githubUrl: "https://github.com/nayra-ahmedaraby"
+    },
+    {
+      title: "Treasure Hunt in the Museum (C++)",
+      tech: "C++, Data Structures",
+      description: "A procedural text-based adventure game using linked lists and dynamic puzzle logic.",
+      impact: "Creative Data Structure Application",
+      githubUrl: "https://github.com/nayra-ahmedaraby"
+    },
+    {
+      title: "Process Scheduling Simulation",
+      tech: "Python, JavaScript, HTML/CSS",
+      description: "Two versions (Python GUI & Web-based) simulating CPU scheduling algorithms (FCFS, SJF, Priority, Round Robin) with performance metrics visualization.",
+      impact: "OS Concepts Visualization",
+      githubUrl: "https://github.com/nayra-ahmedaraby"
+    },
+    {
+      title: "Data Analysis Dashboard",
+      tech: "Python, Data Visualization",
+      description: "Dashboard analyzing datasets with visual insights and statistical summaries.",
+      impact: "Data-Driven Insights",
+      githubUrl: "https://github.com/nayra-ahmedaraby"
     }
   ];
 
