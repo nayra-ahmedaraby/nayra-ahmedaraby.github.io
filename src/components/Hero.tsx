@@ -9,7 +9,7 @@ const Hero = () => {
 
   const downloadCV = () => {
     const link = document.createElement('a');
-    link.href = '/home/project/public/Nayra Ahmed Araby Abdo.pdf';
+    link.href = '/Nayra%20Ahmed%20Araby%20Abdo.pdf';
     link.download = 'Nayra Ahmed Araby Abdo.pdf';
     document.body.appendChild(link);
     link.click();

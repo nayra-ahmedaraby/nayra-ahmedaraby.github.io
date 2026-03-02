@@ -6,7 +6,7 @@ const Projects = () => {
   const projects = [
     {
       title: "Amazon PartyRock – AI Productivity Coach",
-      tech: "Generative AI, Web Development",
+      tech: "Generative AI",
       description: "Created a generative AI web app that offers students daily tips, suggests job matches, and builds CVs based on user skills.",
       impact: "AI-Powered Career Guidance",
       githubUrl: "https://github.com/nayra-ahmedaraby/AI-Productivity-Coach"
@@ -23,32 +23,32 @@ const Projects = () => {
       tech: "AI, SSVC, EPSS, Automation",
       description: "Developed an AI-driven vulnerability prioritization and patch recommendation engine integrating SSVC and EPSS to enhance automated incident response and risk-based decision-making.",
       impact: "Automated Security Response",
-      githubUrl: "https://github.com/nayra-ahmedaraby"
+      githubUrl: "https://github.com/CyberNest-SOAR/CyberNest-Soar"
     },
     {
-      title: "Project Management Dashboard",
-      tech: "PHP, MySQL, JavaScript",
+      title: "Project Management Web App",
+      tech: "PHP, MySQL, HTML/CSS/JS",
       description: "Built a full-stack project management system featuring Kanban board, task tracking, role-based access control, and deadline management.",
       impact: "Full-Stack Productivity Tool",
-      githubUrl: "https://github.com/nayra-ahmedaraby"
+      githubUrl: "https://github.com/nayra-ahmedaraby/project-management-system"
     },
     {
       title: "Treasure Hunt in the Museum (C++)",
       tech: "C++, Data Structures",
       description: "A procedural text-based adventure game using linked lists and dynamic puzzle logic.",
       impact: "Creative Data Structure Application",
-      githubUrl: "https://github.com/nayra-ahmedaraby"
+      githubUrl: "https://github.com/omarameen2005/Treasure-Hunt-in-a-Museum-Project"
     },
     {
       title: "Process Scheduling Simulation",
       tech: "Python, JavaScript, HTML/CSS",
       description: "Two versions (Python GUI & Web-based) simulating CPU scheduling algorithms (FCFS, SJF, Priority, Round Robin) with performance metrics visualization.",
-      impact: "OS Concepts Visualization",
-      githubUrl: "https://github.com/nayra-ahmedaraby"
+      impact: "OS Concepts ,CPU scheduling algorithms ",
+      githubUrl: "https://github.com/nayra-ahmedaraby/Process-Scheduling-Simulation-Project"
     },
     {
       title: "Data Analysis Dashboard",
-      tech: "Python, Data Visualization",
+      tech: "Power BI, SQL, Data Visualization",
       description: "Dashboard analyzing datasets with visual insights and statistical summaries.",
       impact: "Data-Driven Insights",
       githubUrl: "https://github.com/nayra-ahmedaraby"
