@@ -12,48 +12,6 @@ const Projects = () => {
       githubUrl: "https://github.com/nayra-ahmedaraby/AI-Productivity-Coach"
     },
     {
-      title: "WHCL Competition – ProofMe Project",
-      tech: "AI, Computer Vision, Web Development",
-      description: "A platform that verifies ownership of user-uploaded images and videos, protecting users from AI deepfakes and misuse. Finalist project.",
-      impact: "AI Security & Protection",
-      githubUrl: "https://github.com/nayra-ahmedaraby/ProofMe"
-    },
-    {
-      title: "Student Grade Management System",
-      tech: "Python, JSON, CSV",
-      description: "Built a system to manage student records, grades, and GPA with easy data export. Designed to mimic real academic workflows.",
-      impact: "Reduced manual grade handling by 80%",
-      githubUrl: "https://github.com/nayra-ahmedaraby/Student-Grade-Management-System"
-    },
-    {
-      title: "Ultrasonic Distance Measurement Device",
-      tech: "Arduino, Physics",
-      description: "Built an energy-saving sensor device to automate room lighting. Reduced waste energy by detecting absence of movement.",
-      impact: "Energy Waste Reduction",
-      githubUrl: "https://github.com/nayra-ahmedaraby/Ultrasonic-Distance-Measurement"
-    },
-    {
-      title: "Online Shopping Cart Database",
-      tech: "SQL, PHP, CSS",
-      description: "Designed ERD and backend for an e-commerce system to handle transactions efficiently.",
-      impact: "Efficient Transactions",
-      githubUrl: "https://github.com/nayra-ahmedaraby/Online-Shopping-Cart-Database"
-    },
-    {
-      title: "Bus Ticket Booking System",
-      tech: "Java, OOP, GUI",
-      description: "Created desktop app for simulating ticket reservations with a user-friendly interface.",
-      impact: "User-Friendly Design",
-      githubUrl: "https://github.com/nayra-ahmedaraby/Bus-Ticket-Booking-System"
-    },
-    {
-     title: "Simple Web Server",
-     tech: "Python, Sockets, Threading, HTML",
-     description: "Developed a custom web server that handles multiple client requests, serves static HTML pages, and includes a dynamic status endpoint showing server uptime.",
-     impact: "Provided hands-on experience with low-level HTTP handling and socket programming.",
-     githubUrl: "https://github.com/nayra-ahmedaraby/Simple-Web-Server"
-    },
-    {
       title: "SolveThe17 Hackathon Project",
       tech: "HTML, JavaScript",
       description: "Developed a platform for people with special needs and Kids. Won praise for aligning with Sustainable Development Goals.",
@@ -94,6 +52,41 @@ const Projects = () => {
       description: "Dashboard analyzing datasets with visual insights and statistical summaries.",
       impact: "Data-Driven Insights",
       githubUrl: "https://github.com/nayra-ahmedaraby"
+    },
+    {
+      title: "Student Grade Management System",
+      tech: "Python, JSON, CSV",
+      description: "Built a system to manage student records, grades, and GPA with easy data export. Designed to mimic real academic workflows.",
+      impact: "Reduced manual grade handling by 80%",
+      githubUrl: "https://github.com/nayra-ahmedaraby/Student-Grade-Management-System"
+    },
+    {
+      title: "Ultrasonic Distance Measurement Device",
+      tech: "Arduino, Physics",
+      description: "Built an energy-saving sensor device to automate room lighting. Reduced waste energy by detecting absence of movement.",
+      impact: "Energy Waste Reduction",
+      githubUrl: "https://github.com/nayra-ahmedaraby/Ultrasonic-Distance-Measurement"
+    },
+    {
+      title: "Online Shopping Cart Database",
+      tech: "SQL, PHP, CSS",
+      description: "Designed ERD and backend for an e-commerce system to handle transactions efficiently.",
+      impact: "Efficient Transactions",
+      githubUrl: "https://github.com/nayra-ahmedaraby/Online-Shopping-Cart-Database"
+    },
+    {
+      title: "Bus Ticket Booking System",
+      tech: "Java, OOP, GUI",
+      description: "Created desktop app for simulating ticket reservations with a user-friendly interface.",
+      impact: "User-Friendly Design",
+      githubUrl: "https://github.com/nayra-ahmedaraby/Bus-Ticket-Booking-System"
+    },
+    {
+      title: "Simple Web Server",
+      tech: "Python, Sockets, Threading, HTML",
+      description: "Developed a custom web server that handles multiple client requests, serves static HTML pages, and includes a dynamic status endpoint showing server uptime.",
+      impact: "Provided hands-on experience with low-level HTTP handling and socket programming.",
+      githubUrl: "https://github.com/nayra-ahmedaraby/Simple-Web-Server"
     }
   ];
 

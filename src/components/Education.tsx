@@ -25,7 +25,7 @@ const Education = () => {
       description: "Member AI Committee- Collaborated with peers on projects and activities related to artificial intelligence"
     },
     {
-      title: "Aspire Leaders Program – Harvard-affiliated (Ongoing)",
+      title: "Aspire Leaders Program – Harvard-affiliated",
       description: "Selected participant in a global leadership and personal development program focused on social impact and innovation."
     },
     {
@@ -34,7 +34,11 @@ const Education = () => {
     },
     {
       title: "E-Finance – Internship ",
-      description: "technical internship focusing on applied tech and hands-on industry experience."
+      description: "technical internship focusing on data visualization and analysis on financial data and know the work life cycle."
+    },
+    {
+      title: "Mylerz – Internship ",
+      description: "small and introduction internship focusing on applied tech, hands-on industry experience and Data science & AI."
     },
     {
       title: "AIESEC Youth Exchange (Exploratory Experience)",
@@ -116,7 +120,7 @@ const Education = () => {
           {/* Programs & Internships */}
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
             <div className="flex items-center gap-3 mb-6">
-              <Briefcase className="text-orange-400" size={24} />
+              <Briefcase className="text-gold-400" size={24} />
               <h3 className="text-2xl font-semibold text-white">Programs & Internships</h3>
             </div>
             <div className="space-y-5">
