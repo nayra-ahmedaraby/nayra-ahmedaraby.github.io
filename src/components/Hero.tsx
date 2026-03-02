@@ -65,10 +65,10 @@ const Hero = () => {
             </button>
           </div>
         </div>
-        
-        <button 
+        <button
           onClick={scrollToNext}
           className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce"
+          aria-label="Scroll to next section"
         >
           <ChevronDown size={32} />
         </button>
