@@ -101,6 +101,20 @@ const Projects = () => {
       description: "Intelligent fitness planning application using Constraint Satisfaction Problems and machine learning to generate personalized workout plans. Predicts user adherence and adapts plans dynamically.",
       impact: "AI-Driven Personalized Fitness Planning",
       githubUrl: "https://github.com/nayra-ahmedaraby/Fitness-Tracker-API"
+    },
+    {
+      title: "Student Burnout Analysis – Final Project",
+      tech: "Python, Pandas, Matplotlib, Seaborn, Power BI",
+      description: "Comprehensive data analytics project investigating academic burnout among university students using 28,000+ row dataset. Identifies root causes, quantifies burnout prevalence, and proposes actionable interventions.",
+      impact: "Data-Driven Insights for Student Wellness",
+      githubUrl: "https://github.com/nayra-ahmedaraby/Student-Burnout-Analysis"
+    },
+    {
+      title: "Linux Monitoring System",
+      tech: "Bash, Shell Scripting, Linux Administration",
+      description: "Comprehensive system for monitoring server health and security with interactive dashboard. Provides live resource monitoring, security checks, alerting, and logging across multiple Linux distributions.",
+      impact: "Enterprise Linux System Administration",
+      githubUrl: "https://github.com/nayra-ahmedaraby/linux-monitoring-system"
     }
   ];
 
