@@ -87,6 +87,20 @@ const Projects = () => {
       description: "Developed a custom web server that handles multiple client requests, serves static HTML pages, and includes a dynamic status endpoint showing server uptime.",
       impact: "Provided hands-on experience with low-level HTTP handling and socket programming.",
       githubUrl: "https://github.com/nayra-ahmedaraby/Simple-Web-Server"
+    },
+    {
+      title: "HR Analytics Project",
+      tech: "Python, Pandas, Scikit-learn, Databricks, Power BI",
+      description: "Comprehensive data analytics project for analyzing HR data and predicting employee attrition. Combines data analysis and machine learning techniques with cloud-based processing on Databricks.",
+      impact: "Employee Attrition Prediction & Segmentation",
+      githubUrl: "https://github.com/nayra-ahmedaraby/hrAnalysis-cloudData"
+    },
+    {
+      title: "Fitness Tracker API",
+      tech: "FastAPI, Python, MongoDB, Neural Networks, CSP",
+      description: "Intelligent fitness planning application using Constraint Satisfaction Problems and machine learning to generate personalized workout plans. Predicts user adherence and adapts plans dynamically.",
+      impact: "AI-Driven Personalized Fitness Planning",
+      githubUrl: "https://github.com/nayra-ahmedaraby/Fitness-Tracker-API"
     }
   ];
 
