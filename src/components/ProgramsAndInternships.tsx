@@ -32,6 +32,11 @@ const ProgramsAndInternships = () => {
       title: "AIESEC Youth Exchange",
       type: "Exchange Program",
       description: "Participated in a short-term exchange program focusing on leadership and cultural learning."
+    },
+    {
+      title: "Matsuo Lab – University of Tokyo",
+      type: "Research Program",
+      description: "Accepted participant in a prestigious AI research program at Matsuo Laboratory, University of Tokyo. Currently participating in world-class research on deep learning, artificial intelligence, and innovation ecosystem development."
     }
   ];
 
@@ -43,6 +48,8 @@ const ProgramsAndInternships = () => {
         return 'bg-purple-500/20 border-purple-400/50 text-purple-400';
       case 'Exchange Program':
         return 'bg-green-500/20 border-green-400/50 text-green-400';
+      case 'Research Program':
+        return 'bg-red-500/20 border-red-400/50 text-red-400';
       default:
         return 'bg-gray-500/20 border-gray-400/50 text-gray-400';
     }

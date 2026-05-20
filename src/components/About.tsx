@@ -75,10 +75,10 @@ const About = () => {
                 <div>
                   <div className="flex justify-between mb-2">
                     <span className="text-gray-300">German</span>
-                    <span className="text-blue-400">Intermediate</span>
+                    <span className="text-blue-400">Beginner</span>
                   </div>
                   <div className="w-full bg-gray-700 rounded-full h-2">
-                    <div className="bg-blue-400 h-2 rounded-full w-2/3"></div>
+                    <div className="bg-blue-400 h-2 rounded-full w-1/3"></div>
                   </div>
                 </div>
               </div>
