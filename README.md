@@ -12,7 +12,7 @@ This site highlights my skills, academic journey, and real-world projects built 
 ## 🧠 About Me
 
 🎓 **Student @ SUTech University**  
-📌 **GPA: 4.0** (Top Achiever Award – 2025)  
+📌 **GPA: 4.0** (Top Achiever Award – 2025 & 2026)  
 📍 **Based in Cairo, Egypt**  
 🔭 **Interests:** Computer Vision, Robotics, AI for Social Good  
 💬 *Fun Fact:* I once built a smart light sensor just to make my room feel more "alive"!
