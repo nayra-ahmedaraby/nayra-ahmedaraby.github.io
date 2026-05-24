@@ -28,7 +28,7 @@ const About = () => {
             <div className="grid grid-cols-1 gap-4">
               <div className="flex items-center gap-3 text-gray-300">
                 <MapPin className="text-blue-400" size={20} />
-                <span>Zahret Al-Assema Compound, Badr City, Cairo</span>
+                <span>Cairo, Egypt</span>
               </div>
               <div className="flex items-center gap-3 text-gray-300">
                 <Phone className="text-blue-400" size={20} />

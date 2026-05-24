@@ -37,7 +37,7 @@ const Contact = () => {
               <div className="bg-purple-500/20 p-3 rounded-full">
                 <MapPin size={20} />
               </div>
-              <span>Badr City, Cairo</span>
+              <span>Cairo, Egypt</span>
             </div>
             
             <a 

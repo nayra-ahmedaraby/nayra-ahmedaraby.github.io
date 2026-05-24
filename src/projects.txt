@@ -1,0 +1,1389 @@
+Treasure Hunt in the Museum
+A text-based adventure game where players explore a procedurally generated museum, solving puzzles and riddles to reach the ultimate treasure room.
+
+Table of Contents:- Overview Features Game Mechanics Project Structure Requirements Installation & Setup How to Run How to Play File Descriptions
+
+Overview:- Treasure Hunt in the Museum is a console-based adventure game built with C++ that demonstrates the practical application of data structures, particularly linked lists. Players navigate through a dynamically generated museum, choosing paths, solving puzzles, and accumulating points to reach the final treasure. Every playthrough generates a unique museum layout with randomized room connections and puzzle assignments, ensuring high replay value.
+
+Features:-
+
+Procedurally Generated Museum - Unique layout every game Dynamic Puzzle System - Clues loaded from external database Strategic Choices - EASY rooms offer 2 paths, HARD rooms have 1 path Scoring System - Earn points for correct answers, penalty for hints Hint System - Get help when stuck (costs 2 points) Multiple Entrances - Choose from 4 different starting points Map Preview - See museum structure before playing Input Validation - Robust error handling for user inputs Extensible Clue Database - Easy to add new puzzles
+
+Game Mechanics:- Room Types
+
+ENTRANCE (4 rooms): Starting points with simple introductory clues INTERMEDIATE (Variable): Main museum halls with challenging puzzles EXIT (1 room): Final treasure room with ultimate challenge
+
+Difficulty Levels
+
+EASY Rooms 🟢: Two doors to choose from, offering strategic branching HARD Rooms 🔴: Single path forward, more linear progression
+
+Scoring
+
+Correct Answer (No Hint): +10 points Correct Answer (Hint Used): +8 points (-2 point penalty) Wrong Answers: No point deduction, but 3 attempts maximum Game Over: Failed to solve clue after 3 attempts
+
+Project Structure:- treasure-hunt-museum/ ├── main.cpp # Entry point, game initialization ├── Museum.h # Museum class declaration ├── Museum.cpp # Museum class implementation (game logic) ├── Room.h # Room class declaration ├── Room.cpp # Room class implementation ├── Clue.h # Clue class declaration ├── Clue.cpp # Clue class implementation ├── MuseumGenerator.h # Generator class declaration ├── MuseumGenerator.cpp # Procedural generation logic ├── clues.txt # Puzzle database (REQUIRED) └── README.md # This file
+
+Requirements:- Software Requirements
+
+C++ Compiler with C++17 support:
+
+GCC 7.0+ (Linux/macOS) MinGW-w64 (Windows) Clang 5.0+ MSVC 2017+ (Visual Studio)
+
+System Requirements
+
+OS: Windows 10/11, Linux, macOS RAM: 50 MB minimum Storage: 5 MB
+
+Dependencies
+
+Standard C++ Library (included with compiler) No external libraries required ✅
+
+Installation & Setup:- Step 1: Clone or Download Download all project files to a single directory: treasure-hunt-museum/ ├── All .cpp files ├── All .h files └── clues.txt Step 2: Verify clues.txt Ensure the clues.txt file is in the same directory as your source files. The game cannot run without this file. Sample clues.txt format: 1 What has keys but no locks, space but no room? Keyboard Think about what you use for typing Riddle 3
+2 I speak without a mouth and hear without ears. What am I? Echo Sound comes back to you Riddle 3
+Step 3: Open Terminal/Command Prompt Navigate to your project directory: Windows: cmdcd C:\path\to\treasure-hunt-museum Linux/macOS: bashcd /path/to/treasure-hunt-museum
+
+How to Run:- Quick Start (Recommended) Windows: cmdg++ *.cpp -o game.exe .\game.exe Linux/macOS: bashg++ *.cpp -o game ./game Why This Command Works g++ *.cpp -o game.exe Let's break down this compilation command:
+
+g++: The GNU C++ compiler
+
+Compiles C++ source code into executable programs Part of GCC (GNU Compiler Collection)
+
+*.cpp: Wildcard that matches all .cpp files
+
+Automatically includes all C++ source files in the directory:
+
+main.cpp Museum.cpp Room.cpp Clue.cpp MuseumGenerator.cpp
+
+Why this matters: You don't need to list each file individually Alternative: You could write g++ main.cpp Museum.cpp Room.cpp Clue.cpp MuseumGenerator.cpp -o game.exe
+
+-o game.exe: Output filename specification
+
+-o flag means "output file name" game.exe is the name of the compiled executable On Windows: Use .exe extension On Linux/macOS: Extension is optional (use game)
+
+What happens during compilation: [Source Files] → [Compiler] → [Object Files] → [Linker] → [Executable] *.cpp → g++ → *.o → Link → game.exe The compiler:
+
+Reads all .cpp files Checks for syntax errors Compiles each file to object code Links all object files together Creates a single executable: game.exe
+
+.\game.exe (Windows) or ./game (Linux/macOS) This command runs the compiled executable:
+
+. = Current directory \ (Windows) or / (Linux/macOS) = Directory separator game.exe = Your executable file
+
+Why you need .\ or ./:
+
+Tells the system to look in the current directory Without it, the system only searches PATH directories Security feature to prevent accidental execution
+
+How to Play:- Step 1: Start the Game Run the executable. You'll see: ===== INITIALIZING MUSEUM DATA ===== Successfully loaded 15 clues from clues.txt
+
+===== MUSEUM MAP LAYOUT ===== [1] Entrance: 1 (HARD) [5] Hall Room 5 (EASY) ... Step 2: Choose an Entrance Select one of the 4 entrance rooms (1-4): Choose an entrance (1 to 4):
+
+Entrance: 1
+Entrance: 2
+Entrance: 3
+Entrance: 4 Your choice: 1 Step 3: Solve Puzzles Each room presents a clue: --- ROOM --- Name: Hall Room 5 Clue: What has keys but no locks?
+Attempt 1 of 3 Your answer: keyboard
+
+Correct! The door unlocks. Points earned: 10 | Total Score: 10 Step 4: Navigate
+
+EASY Rooms: Choose between 2 doors (1 or 2) HARD Rooms: Automatic progression through single door
+
+Step 5: Reach the Treasure Solve the final puzzle in the treasure room to win!
+CONGRATULATIONS! YOU FOUND THE TREASURE! Final Score: 60
+File Descriptions:- Core Files main.cpp
+
+Purpose: Program entry point Responsibilities:
+
+Initialize random seed Load clue database from clues.txt Create Museum object Start game loop Cleanup resources
+
+Museum.h / Museum.cpp
+
+Purpose: Main game controller Key Functions:
+
+generate(): Create museum layout startGame(): Main game loop solveCurrentClue(): Handle puzzle attempts navigate(): Move between rooms showMap(): Display museum structure
+
+Room.h / Room.cpp
+
+Purpose: Linked list node representing museum rooms Key Members:
+
+next1, next2: Pointers to connected rooms entryClue: Puzzle for this room cleared: Tracks if puzzle is solved
+
+Key Functions:
+
+connectNext1(), connectNext2(): Link rooms hasTwoDoors(): Check if EASY room printTree(): Display room structure
+
+Clue.h / Clue.cpp
+
+Purpose: Puzzle management system Key Functions:
+
+loadFromFile(): Load puzzles from clues.txt getRandomClue(): Select random puzzle checkAnswer(): Validate user input normalizeAnswer(): Case-insensitive comparison
+
+MuseumGenerator.h / MuseumGenerator.cpp
+
+Purpose: Procedural museum creation Key Functions:
+
+generate(): Create complete museum with 4 entrances buildRandomPath(): Generate room chains with branching createRoom(): Factory method for room creation
+
+Data Files clues.txt
+
+Purpose: External puzzle database Format: Plain text with structured data Required: Must exist in same directory as executable Customizable: Add/edit puzzles easily
+
+++++
+Linux Monitoring System 🐧
+Project Overview
+Linux Monitoring System is a comprehensive system for monitoring the health and security of a Linux server. It provides an interactive dashboard that displays live resources, security issues, and alerts—all through a user-friendly command-line interface.
+
+The system is written entirely in Bash and supports various Linux distributions (Debian, Ubuntu, Red Hat, CentOS, Kali, and others).
+
+✨ Key Features
+📊 Resource Monitoring
+CPU: Processor usage with warning and critical indicators
+Memory (RAM): Memory consumption with customizable thresholds
+Disk Space: Storage capacity and usage information
+Network: Network interface details and connections
+Load Average: System load metrics (1m, 5m, 15m)
+🔒 Security Monitoring
+Service Health: Monitoring critical services (SSH, Cron)
+SSH Attempts: Tracking failed and successful login attempts
+Open Ports: Identifying active and suspicious ports
+User Management: List of active users and sessions
+File Integrity: Comparing checksums of critical files (MD5/SHA256)
+Zombie Processes: Detecting orphaned processes
+📝 Logging & Alerts
+Centralized Logging: Store all data in organized log files
+Alert System: Send alerts when thresholds are exceeded
+Log Rotation: Automatic management of log file sizes
+Daily Reports: Comprehensive daily system status reports
+🎨 User Interface
+Live Dashboard: Real-time system status updates
+Interactive Menu: Easy access to all features
+Color Coding: Color-coded interface for easy readability
+📁 Architecture & Project Structure
+linux-monitoring-system/
+│
+├── monitor.sh                    # Main program (entry point)
+├── config.conf                   # Shared configuration file
+├── install.sh                    # Setup and preparation script
+│
+├── scripts/
+│   ├── resources/                # System resource monitoring
+│   │   ├── cpu.sh               # CPU information
+│   │   ├── memory.sh            # Memory and Swap
+│   │   ├── disk.sh              # Storage space
+│   │   ├── network.sh           # Network interfaces
+│   │   └── load.sh              # System load average
+│   │
+│   ├── security/                # Security checks
+│   │   ├── services.sh          # Critical service status
+│   │   ├── ssh_attempts.sh      # SSH login attempts
+│   │   ├── open_ports.sh        # Active ports
+│   │   ├── users.sh             # Users and sessions
+│   │   ├── file_integrity.sh    # File checksums
+│   │   └── zombies.sh           # Zombie processes
+│   │
+│   ├── ui/                      # User interface components
+│   │   ├── colors.sh            # Color scheme and formatting
+│   │   ├── progress_bar.sh      # Progress bars and graphs
+│   │   ├── dashboard.sh         # Main dashboard
+│   │   └── menu.sh              # Interactive menu
+│   │
+│   └── logging/                 # Logging and alerts
+│       ├── log_writer.sh        # Log file writer
+│       ├── log_rotate.sh        # Log rotation
+│       ├── alerts.sh            # Alert system
+│       └── daily_report.sh      # Daily reports
+│
+├── logs/                        # Log directory (auto-created)
+│   └── .gitkeep
+│
+├── baseline/                    # File integrity baselines
+│   └── .gitkeep
+│
+└── docs/
+    ├── output_format.md         # Output format documentation
+    └── final_report.pdf         # Final report
+🚀 Quick Start
+Requirements
+Linux system (Debian, Ubuntu, Red Hat, CentOS, Kali, etc.)
+Bash 4.0+
+Standard utilities: awk, grep, sed, ps, netstat/ss
+Installation
+Clone the repository:
+
+git clone https://github.com/nayra-ahmedaraby/linux-monitoring-system.git
+cd linux-monitoring-system
+Run the installation script:
+
+bash install.sh
+This creates required directories and prepares the system for use.
+
+Basic Usage
+Display a single dashboard snapshot:
+
+./monitor.sh
+Live monitoring (continuous updates):
+
+./monitor.sh --watch
+Updates every 5 seconds (configurable in config.conf)
+
+Interactive menu:
+
+./monitor.sh --menu
+Run the alert system:
+
+./monitor.sh --alerts
+Get help:
+
+./monitor.sh --help
+⚙️ Configuration & Customization
+All settings are in config.conf:
+
+# Resource thresholds (percentage)
+CPU_WARN_THRESHOLD=70          # Warning level
+CPU_CRIT_THRESHOLD=90          # Critical level
+
+RAM_WARN_THRESHOLD=75
+RAM_CRIT_THRESHOLD=90
+
+DISK_WARN_THRESHOLD=80
+DISK_CRIT_THRESHOLD=95
+
+# Services to monitor
+MONITORED_SERVICES="sshd cron"
+
+# Suspicious ports
+SUSPICIOUS_PORTS="23 2323 4444 5555 31337"
+
+# Refresh interval
+REFRESH_INTERVAL=5             # seconds
+📊 Sample Output
+Live Dashboard
+╔════════════════════════════════════════════════════════╗
+║       LINUX SYSTEM MONITORING DASHBOARD               ║
+║              2024-05-20 14:32:45                      ║
+╠════════════════════════════════════════════════════════╣
+║ CPU      [████████░░] 85%  🔴 CRITICAL                ║
+║ RAM      [███████░░░] 74%  🟡 WARNING                 ║
+║ DISK     [██████░░░░] 61%  🟢 OK                      ║
+║ LOAD AVG 1.45 (5m), 1.32 (15m)                        ║
+║                                                        ║
+║ 🔒 SECURITY STATUS:                                    ║
+║   SSH Service       ✓ Running                         ║
+║   Failed Logins     2 attempts in last hour           ║
+║   Open Ports        8 active ports                    ║
+║   File Integrity    ✓ All critical files intact       ║
+╚════════════════════════════════════════════════════════╝
+🔧 Design & Architecture
+Modular Design
+Each component is responsible for a specific function:
+
+Resources: Collect system resource data
+Security: Perform security checks
+UI: Handle display and formatting
+Logging: Handle logging and alerts
+Centralized Configuration
+config.conf: All settings in one place
+monitor.sh: Single entry point
+scripts/ui/colors.sh: Central color handler
+Quality Standards
+✅ Shellcheck compliant
+✅ Comprehensive error handling
+✅ Clear and documented comments
+✅ Multi-distribution Linux support
+📈 Use Cases
+Production Server Monitoring: Track performance and resources in real-time
+Security Audits: Detect threats and suspicious activity
+Compliance & Auditing: Maintain comprehensive activity logs
+Incident Response: Quickly identify and address issues
+Education & Training: Learn Linux system administration
+🤝 Project Team
+This project is developed by second-year students from the Information Systems Department:
+
+Member 1: System resource monitoring (scripts/resources/)
+Member 2: Security checks (scripts/security/)
+Member 3: User interface components (scripts/ui/)
+Member 4: Logging and alerts (scripts/logging/)
++++++
+MINIMIND Educational App
+
+MINIMIND is a React (Vite) app for children ages 6–12, featuring onboarding, authentication, course exploration, learning paths, and an AI chatbot. The app is styled with Tailwind CSS and inline CSS, and uses Figma assets for a playful, child-friendly UI.
+
+Features
+
+Onboarding: Fun, age-appropriate welcome and setup flow.
+Authentication: Simple login/signup for kids.
+Course Exploration: Browse and preview courses.
+Learning Paths: Personalized learning journeys.
+AI Chatbot: Friendly, helpful assistant for learning.
+Custom Avatars: Uses Figma-exported PNGs for avatars.
+Modern UI: Styled with Tailwind CSS and inline styles for color accuracy.
+Prerequisites
+
+Node.js (v16 or higher recommended)
+npm (v8 or higher) or yarn
+Git (to clone the repo)
+Figma assets: All images (e.g., /public/assets/faces/) must be present as exported from Figma.
+Getting Started
+
+Clone the Repository
+
+git clone https://github.com/your-username/minimind.git cd minimind
+
+Install Dependencies
+
+Using npm: npm install
+
+Or with yarn: yarn
+
+Add Figma Assets
+
+Ensure all Figma-exported images (avatars, icons, etc.) are in the public/assets/ directory.
+Example: public/assets/faces/face1.png, public/assets/logo.png, etc.
+Start the Development Server
+
+npm run dev
+
+Or: yarn dev
+
+The app will run at http://localhost:5173 by default.
+If the port is in use, Vite will pick another (check your terminal output).
+Project Structure
+
+minimind/ ├── public/ │ └── assets/ │ └── faces/ │ └── face1.png │ └── logo.png ├── src/ │ ├── components/ │ ├── pages/ │ ├── App.jsx │ └── main.jsx ├── tailwind.config.js ├── package.json └── README.md
+
+Styling
+
+Tailwind CSS is used for layout and spacing.
+Inline CSS and CSS variables are used for colors to match the Figma design exactly.
+No external component library is required, but you may use one for accessibility or UI consistency if needed.
+Troubleshooting
+
+Colors not showing?
+Check that inline styles and CSS variables are present in components.
+Ensure Tailwind is properly configured (tailwind.config.js).
+Images not displaying?
+Make sure all image paths are correct and files are in public/assets/.
+For Vite, use /assets/face1.png (not src/assets/).
+Port conflicts?
+If localhost:5173 is busy, Vite will use another port (see terminal).
+Node.js not installed?
+Download from nodejs.org.
+Customization
+
+Add new avatars: Place PNGs in public/assets/faces/ and update the Avatar component if needed.
+Update colors: Edit inline styles or CSS variables in components.
+Change logo: Replace public/assets/logo.png.
+Build for Production
+
+npm run build
+
+Or: yarn build
+
+Output will be in the dist/ folder.
+Deployment
+
+Deploy the dist/ folder to any static hosting (Vercel, Netlify, GitHub Pages, etc.).
+Ensure the public/assets/ directory is included.
+++++
+
+Fitness Tracker API
+A comprehensive fitness planning application that uses Constraint Satisfaction Problems (CSP), machine learning predictions, and modern web API architecture to create personalized workout plans.
+
+Project Overview
+This project addresses the challenge of creating sustainable workout plans that match users' available time, fitness goals, and adherence likelihood. It combines:
+
+CSP (Constraint Satisfaction Problems) for intelligent workout scheduling
+Neural Network predictions for adherence forecasting
+FastAPI backend with MongoDB database
+RESTful API for seamless integration
+Architecture
+The application follows a clean architecture pattern with separation of concerns:
+
+backend/
+├── main.py                 # FastAPI application entry point
+├── models/                 # Pydantic models and database setup
+│   ├── models.py           # Core domain models
+│   ├── database.py         # MongoDB connection and collections
+│   └── __init__.py
+├── repositories/           # Data access layer (MongoDB)
+│   ├── user_repository.py
+│   ├── workout_plan_repository.py
+│   ├── plan_comparison_repository.py
+│   ├── adherence_prediction_repository.py
+│   ├── activity_log_repository.py
+│   └── __init__.py
+├── services/               # Business logic layer
+├── controllers/            # Request handling layer
+├── routes/                 # API route definitions
+├── planners/               # CSP and rule-based planning algorithms
+└── utils/                  # Utility functions for plan adaptation and comparison
+CET251 Alignment
+This project satisfies the CET251 Fitness Project requirements:
+
+Solves a real-world fitness planning problem with a working prototype.
+Uses Python and FastAPI as the primary implementation stack.
+Includes multiple AI concepts:
+CSP planner for scheduling workout days under constraints.
+Rule-based planner for comparison and evaluation.
+Provides a small neural-network component in backend/services/adherence_predictor.py.
+Uses synthetic training data for adherence prediction.
+Generates a one-week workout plan based on user availability.
+Avoids overload with rest-day enforcement and beginner recovery rules.
+Balances workout types across the week using multiple categories.
+Adapts the plan when a day is missed.
+Compares CSP and rule-based solutions as required by the course.
+Predicts adherence and difficulty for generated plans.
+Quick Start
+The easiest way to run the project is to use the provided server startup script.
+
+On Windows (PowerShell):
+
+# Make sure you're in the project root
+cd c:\Users\LOQ\Coding\fitness_tracker
+
+# Run the PowerShell script
+.\run_server.ps1
+On Windows (Command Prompt):
+
+cd c:\Users\LOQ\Coding\fitness_tracker
+run_server.bat
+On Linux/macOS:
+
+cd ~/path/to/fitness_tracker
+chmod +x run_server.sh
+./run_server.sh
+The script will automatically:
+
+Check for Docker and MongoDB installation
+Start a MongoDB container (if not already running)
+Install Python dependencies
+Start the FastAPI server with live reload
+Once the server is running, open your browser and visit:
+
+Frontend: http://127.0.0.1:8000/
+API Documentation: http://127.0.0.1:8000/docs
+Alternative Docs: http://127.0.0.1:8000/redoc
+Manual Setup (if not using the script)
+If you prefer to set up manually:
+
+Start MongoDB (requires Docker):
+
+docker run -d --name fitness_tracker_mongodb \
+  -p 27017:27017 \
+  -e MONGO_INITDB_ROOT_USERNAME=admin \
+  -e MONGO_INITDB_ROOT_PASSWORD=admin \
+  mongo:7.0 --auth
+Install dependencies:
+
+cd backend
+pip install -r requirements.txt
+Start the API server:
+
+uvicorn main:app --reload
+Open the API docs at http://127.0.0.1:8000/docs
+
+Prerequisites
+Docker Desktop - Download from https://www.docker.com/products/docker-desktop
+Python 3.9+ - Download from https://www.python.org
+Git (optional, for version control)
+Run Instructions
+POST /api/v1/plan/rule-based — generate a rule-based weekly plan
+POST /api/v1/plan/csp — generate a CSP-based weekly plan
+POST /api/v1/plan/adapt — adapt a plan after a missed day
+POST /api/v1/plan/compare — compare CSP and rule-based plans
+POST /api/v1/predict/adherence — predict adherence probability on a plan
+GET /api/v1/users/{user_id}/plans — retrieve saved plans
+GET /api/v1/users/{user_id}/comparisons — retrieve saved comparison results
+GET /api/v1/users/{user_id}/predictions — retrieve saved adherence predictions
+GET /api/v1/users/{user_id}/activity — retrieve user activity logs
+Deployment Notes
+MongoDB is used for persistence.
+Workouts are seeded automatically on startup via backend/seed.py.
+The neural network model is loaded or trained on startup.
+Database Entities
+The system stores the following entities in MongoDB:
+
+Workouts (Pre-seeded)
+Category: Cardio, Upper Body, Lower Body, Full Body, Rest
+Level: Beginner, Intermediate
+Exercises: List of specific exercises
+Duration: How long the workout takes (minutes)
+Intensity: Low, Medium, High
+Calories Burned: Estimated calories burned
+Equipment: Required equipment (barbell, dumbbells, etc.)
+Muscle Groups: Targeted muscle groups
+Benefits: Workout benefits
+Description: Additional details
+Users: User profiles with fitness goals and preferences
+Workout Plans: Generated plans (CSP, rule-based, adapted) with metadata
+Plan Comparisons: Results of comparing different planning approaches
+Adherence Predictions: AI predictions for user adherence likelihood
+Activity Logs: Audit trail of all user actions and system events
+Team Roles and Responsibilities
+1. Logic Specialist (CSP Implementation)
+Role: Implement the core intelligence of the workout planner using Constraint Satisfaction Problems.
+
+Responsibilities:
+
+Design and implement CSP constraints for workout scheduling
+Ensure no consecutive same workouts, rest day requirements, and goal alignment
+Handle plan adaptation when users miss days
+Compare CSP-generated plans vs. rule-based alternatives
+Key Files:
+
+planners/csp_planner.py - Main CSP implementation
+planners/rule_based.py - Rule-based planner for comparison
+utils/adapt_plan.py - Plan adaptation logic
+2. AI Specialist (Machine Learning)
+Role: Develop and train neural network models to predict user adherence and plan difficulty.
+
+Responsibilities:
+
+Generate synthetic training data based on user profiles
+Train regression models to predict adherence probability
+Implement difficulty scoring for workout plans
+Integrate predictions into the planning workflow
+Key Files:
+
+services/adherence_predictor.py - Neural network implementation
+Synthetic data generation and model training logic
+3. Backend & Integration Specialist
+Role: Build the robust FastAPI server with proper database integration and API design.
+
+Responsibilities:
+
+Set up FastAPI application with proper routing
+Implement MongoDB integration for data persistence
+Design RESTful API endpoints for all operations
+Ensure proper error handling and validation
+Implement repository/service/controller architecture
+Key Files:
+
+main.py - Application entry point
+models/database.py - Database configuration
+repositories/user_repository.py - Data access layer
+routes/ - All API route definitions
+controllers/ - Request handling logic
+4. API Documentation & Testing Specialist
+Role: Document the API thoroughly and ensure comprehensive testing coverage.
+
+Responsibilities:
+
+Create detailed API documentation with examples
+Implement automated tests for all endpoints
+Design API client examples and usage guides
+Ensure API follows RESTful conventions
+Handle API versioning and backward compatibility
+Key Files:
+
+API documentation (Swagger/OpenAPI)
+Test files (if implemented)
+Client examples and integration guides
+5. Documentation & Presentation Specialist
+Role: Create comprehensive project documentation and presentation materials.
+
+Responsibilities:
+
+Write detailed technical reports (4-6 pages)
+Create PowerPoint presentations for project defense
+Document CSP constraints and AI methodology
+Prepare demo videos and usage guides
+Explain project architecture and design decisions
+Key Deliverables:
+
+Technical report explaining CSP implementation
+Presentation slides covering all project aspects
+Demo video showcasing the application
+User manual and API documentation
+API Endpoints
+User Management
+POST /api/v1/users - Create new user profile
+GET /api/v1/users/{user_id} - Retrieve user information
+GET /api/v1/users - List all users
+Workout Planning
+POST /api/v1/plan/rule-based - Generate rule-based workout plan
+POST /api/v1/plan/csp - Generate CSP-optimized workout plan
+POST /api/v1/plan/adapt - Adapt existing plan for missed days
+POST /api/v1/plan/compare - Compare CSP vs rule-based approaches
+AI Predictions
+POST /api/v1/predict/adherence - Predict user adherence probability
+Workout Management
+GET /api/v1/workouts - Get all available workouts
+GET /api/v1/workouts/{category}/{level} - Get specific workout by category and level
+GET /api/v1/workouts/category/{category} - Get all workouts in a category
+GET /api/v1/workouts/level/{level} - Get all workouts for a level
+Data Retrieval
+GET /api/v1/users/{user_id}/plans - Get all plans for a user
+GET /api/v1/users/{user_id}/comparisons - Get all comparisons for a user
+GET /api/v1/users/{user_id}/predictions - Get all predictions for a user
+GET /api/v1/users/{user_id}/activity - Get user activity logs
+Installation & Setup
+Prerequisites
+Python 3.8+
+MongoDB (running locally on default port 27017)
+Git
+Installation Steps
+Clone the repository:
+
+git clone <repository-url>
+cd fitness_tracker
+Create virtual environment:
+
+python -m venv venv
+venv\Scripts\activate  # Windows
+# or
+source venv/bin/activate  # Linux/Mac
+Install dependencies:
+
+pip install -r requirements.txt
+Start MongoDB service (if not running):
+
+docker run -d `
+--name fitness-db -p 27017:27017 mongo:7.0
+
+
+5. Run the application:
+```bash
+uvicorn backend.main:app --reload
+The API will be available at http://localhost:8000/docs
+
+Automatic Workout Seeding
+When the application starts, it automatically seeds the database with default workout data including:
+
+10 pre-configured workouts (Cardio, Upper Body, Lower Body, Full Body, Rest)
+Support for 2 fitness levels (Beginner, Intermediate)
+Rich metadata including duration, intensity, calories burned, equipment, muscle groups, and benefits
+No manual data setup is required!
+
+Usage Example
+Create a User
+curl -X POST "http://localhost:8000/api/v1/users" \
+     -H "Content-Type: application/json" \
+     -d '{
+       "available_days": ["Monday", "Wednesday", "Friday"],
+       "goal": "Lose Weight",
+       "level": "Beginner"
+     }'
+Generate CSP Plan
+curl -X POST "http://localhost:8000/api/v1/plan/csp" \
+     -H "Content-Type: application/json" \
+     -d '{
+       "available_days": ["Monday", "Wednesday", "Friday"],
+       "goal": "Lose Weight",
+       "level": "Beginner"
+     }'
+Project Goals
+Real Problem Solving: Help students create sustainable workout plans
+AI Integration: Demonstrate practical use of CSP and neural networks
+Comparison Analysis: Show benefits of AI-driven vs. rule-based approaches
+Scalable Architecture: Build maintainable, extensible codebase
+Professional Delivery: Complete documentation and presentation
+Technologies Used
+Backend: FastAPI, Python
+Database: MongoDB
+AI/ML: Scikit-learn, NumPy
+CSP: python-constraint library
+Documentation: Markdown, OpenAPI
+
+++++++
+📋 Project Dashboard
+A full-featured Project Management Dashboard built with PHP, MySQL, and vanilla JavaScript. Manage projects, tasks, and team members with an intuitive Kanban board, calendar view, and role-based access control.
+
+PHP MySQL JavaScript
+
+✨ Features
+🗂️ Kanban Board
+Drag-and-drop task management across To Do, In Progress, and Done columns
+Filter tasks by project
+Real-time task count per column
+✅ Task Management
+Create, edit, and delete tasks with detailed information
+Assign tasks to team members
+Set priorities (Low, Medium, High)
+Due date tracking with overdue indicators
+Subtasks — break tasks into smaller actionable items
+Comments — collaborate with team members on tasks
+File Attachments — upload and manage files per task
+📅 Calendar View
+Visualize tasks on an interactive calendar
+View upcoming deadlines at a glance
+📁 Project Management (Manager only)
+Create and manage projects with custom color labels
+Automatic project archival when all tasks are completed
+Track project-level file attachments
+👥 Team Members (Manager only)
+View all team members and their roles
+Track task statistics per member (total, completed, on-time, late)
+Add, edit, and manage user accounts
+🔐 Authentication & Authorization
+Secure login system with session management
+Role-based access control:
+Manager — Full access: create tasks, manage projects, manage members
+Member — Can view and update assigned tasks
+🛠️ Tech Stack
+Layer	Technology
+Backend	PHP 8.x
+Database	MySQL (MySQLi)
+Frontend	HTML5, CSS3, Vanilla JavaScript
+Server	Apache (XAMPP)
+📁 Project Structure
+project-dashboard/
+├── api/                    # REST API endpoints
+│   ├── comments.php        # Task comments CRUD
+│   ├── files.php           # File upload/download/delete
+│   ├── projects.php        # Project CRUD
+│   ├── subtasks.php        # Subtask management
+│   ├── tasks.php           # Task CRUD & status updates
+│   └── users.php           # User management & stats
+├── assets/
+│   ├── css/
+│   │   └── style.css       # Complete application styles
+│   └── js/
+│       ├── app.js          # Shared utilities
+│       ├── calendar.js     # Calendar view logic
+│       ├── kanban.js       # Kanban board logic
+│       ├── members.js      # Members page logic
+│       ├── my-tasks.js     # My Tasks page logic
+│       └── projects.js     # Projects page logic
+├── config/
+│   └── database.php        # Database configuration
+├── includes/
+│   ├── footer.php          # Page footer
+│   ├── functions.php       # Helper functions & utilities
+│   ├── header.php          # Page header & sidebar navigation
+│   ├── task-card.php       # Task card component
+│   └── template.php        # Template utilities
+├── templates/
+│   ├── login.html          # Login page template
+│   ├── modals/
+│   │   ├── project-modal.php
+│   │   └── task-modal.php
+│   └── views/
+│       ├── calendar.html
+│       ├── kanban.html
+│       ├── members.html
+│       ├── my-tasks.html
+│       └── projects.html
+├── uploads/                # Uploaded file storage
+├── index.php               # Kanban Board (main page)
+├── calendar.php            # Calendar view
+├── login.php               # Authentication
+├── logout.php              # Session logout
+├── members.php             # Team members (manager only)
+├── my-tasks.php            # Personal task list
+└── projects.php            # Project management (manager only)
+🚀 Getting Started
+Prerequisites
+XAMPP (or any Apache + PHP + MySQL stack)
+PHP 8.0 or higher
+MySQL 5.7 or higher
+Installation
+Clone the repository
+
+git clone https://github.com/yourusername/project-dashboard.git
+Move to your web server directory
+
+# For XAMPP on Windows
+mv project-dashboard C:/xampp/htdocs/project-dashboard
+
+# For XAMPP on macOS/Linux
+mv project-dashboard /opt/lampp/htdocs/project-dashboard
+Create the database
+
+Open phpMyAdmin (http://localhost/phpmyadmin) and create a new database:
+
+CREATE DATABASE project_dashboard;
+Import the database schema
+
+Import the provided SQL file via phpMyAdmin, or run:
+
+mysql -u root -p project_dashboard < database.sql
+Configure database connection
+
+Edit config/database.php if your MySQL credentials differ from the defaults:
+
+define('DB_HOST', 'localhost');
+define('DB_USER', 'root');
+define('DB_PASS', '');
+define('DB_NAME', 'project_dashboard');
+Set upload directory permissions
+
+chmod 755 uploads/
+Start Apache & MySQL via the XAMPP Control Panel
+
+Open in browser
+
+http://localhost/project-dashboard
+📸 Screenshots
+Kanban Board	Calendar View	Members
+Kanban	Calendar	Members
+🔑 Default Credentials
+Role	Username	Password
+Manager	admin	admin
+Member	user	user
+⚠️ Important: Change default passwords before deploying to production.
+
+📡 API Endpoints
+Endpoint	Actions
+api/tasks.php	create, update, delete, list, get
+api/projects.php	create, update, delete, list
+api/comments.php	add, get, delete
+api/subtasks.php	add, toggle, delete
+api/files.php	upload, get, delete
+api/users.php	list, list_stats, get, create, update, delete
+All API endpoints return JSON responses and require authentication via session.
+
+🔒 Security Features
+Prepared Statements — All database queries use parameterized queries to prevent SQL injection
+Input Sanitization — User inputs are sanitized with htmlspecialchars() to prevent XSS
+Session-based Authentication — Secure session management for user login
+Role-based Access Control — Manager and Member roles with restricted permissions
+File Upload Validation — Secure file handling with unique filename generation
+🤝 Contributing
+Contributions are welcome! Please follow these steps:
+
+Fork the repository
+Create a feature branch (git checkout -b feature/amazing-feature)
+Commit your changes (git commit -m 'Add amazing feature')
+Push to the branch (git push origin feature/amazing-feature)
+Open a Pull Request
+🎓 About
+This project was developed as a university coursework project for the Web Programming course — 2nd Year, 1st Semester.
+
+Made with ❤️ using PHP, MySQL & JavaScript
++++++++
+ SYSTEM_MANIFEST: CyberNestSoar ]
+                     / \
+                    /   \
+                   /  ^  \
+                  /  / \  \
+                 /  /   \  \
+                /  /-- --\  \
+               /  /--   --\  \
+              /  /---   ---\  \
+             /  /----   ----\  \
+            /__/             \__\
+
+                CyberNestSOAR
+          -------------------------
+           [ AI ENHANCED DEFENSE ]
+
+    ## [ ⌬ ]  MODULE_INVENTORY: TECH_STACK
+    ## [ ⚡ ] TACTICAL_ORCHESTRATION
+    ## [ 🧠 ] NEURAL_CORE_LOGIC
+CyberNestSoar is an AI-enhanced security powerhouse engineered to operate as a full-time, tireless SOC Analyst. Unlike traditional vendor-locked tools, it is built on a modular Docker Compose framework, allowing for seamless deployment across any infrastructure.
+
+⚡ [ THE_SOC_LIFECYCLE_LOOP ]
+CyberNestSoar executes the complete defensive cycle, from initial ingest to post-incident learning:
+
+DETECTION: Aggregates telemetry across distributed environments.
+
+ENRICHMENT: Injects threat intelligence (CVSS, EPSS) via automated API hooks.
+
+TRIAGE: AI-driven priority scoring to eliminate "Log Headache".
+
+RESPONSE: Immediate execution of automated IR playbooks.
+
+LEARNING: Feedback loops that refine the model based on mitigated threats.
+🧠 [ COGNITIVE_LAYERS (AI_INTEGRATION) ]
+The system leverages advanced neural logic to act as a Force Multiplier for security teams:
+
+[ ⟁ ] PHISHING_SENTINEL: Specialized AI detection for email-based incursions.
+
+[ ⌬ ] PREDICTIVE_SCORING: Machine learning models that calculate Severity & Priority in real-time.
+
+[ ⚙ ] LLM_CLASSIFIER: High-level log classification that translates raw hex/text into human-readable attack types with confidence rates.
+
+[ ⚡ ] TACTICAL_ORCHESTRATOR: AI-selected playbooks that trigger specific responses (Isolation/Blacklisting) based on threat context.
+⬢ [ INFRASTRUCTURE_NODES ]
+Because CyberNestSoar is Docker-based, it is not tethered to a single vendor. It can be deployed on-prem, in the cloud, or in hybrid environments with zero hardware friction.
+
+root@cybernest:~$ docker-compose up --detach
+[+] Running 8/8
+ ⠿ Container Wazuh_Manager      Healthy
+ ⠿ Container AI_Decision_Engine Running
+ ⠿ Container TheHive_CaseMgmt   Running
+ ⠿ Container CyberNest_Core     Active
+⌬ [ MODULE_INVENTORY: TECH_STACK ]
+Component	Technology	PROTOCOL / UTILITY
+Security Ops	TheHive / Cortex / Wazuh / Velociraptor / Zeek	SIEM - EDR - NDR - Case Management
+Backend	FastAPI	High-Performance API Orchestration
+Database	PostgreSQL / Redis	Persistent Storage & In-Memory Caching
+AI Neural Core	Python (Scikit-learn / TextBlob / LLMs)	Phishing Detection - Scoring - Log Classification
+Frontend	React	Real-Time Security Dashboard & Visualization
+Infrastructure	Docker / Docker Compose	Vendor-Agnostic Containerization
+🥷 [OPERATIONAL_STRIKE_TEAM]
+Name	Tactical Title	Tools & Modules	Tactical Responsibilities	Operational Description
+Hanaa	NDR Lead	Suricata — Zeek	Deployment — Rule Engineering	Governance — Compliance — Strategy Alignment
+Paula	SOAR Architect	TheHive — Cortex — Docker	Root Orchestration — Pipeline Integration	IR Playbook Design — Orchestration Logic — Architecture
+Amir	SIEM Analyst	Wazuh	Node Deployment — Telemetry Config	Threat Hunting — Telemetry Analysis
+Ahmed	EDR & Infra Engineer	Velociraptor — Docker	Root Orchestration — Basic Config	Vulnerability Assessment — Incident Mitigation
+Momen	AI Team Leader	Python — LLMs	Neural Architecture — Severity Scoring	Neural Engine Architecture — LLM Implementation
+Pavlly	Database Engineer	PostgreSQL — Redis	Schema Design — SQL Orchestration	Data Persistence — SQL Lifecycle Management
+Nayra	AI Model Developer	Scikit-learn — TextBlob	NLP Pipeline — Feature Training	Feature Engineering — Model Optimization
+Steven	Backend Developer	FastAPI — Docker	Service Development — Interfacing	API Orchestration — System Interfacing
+Habiba	Frontend Developer	React	Tactical Dashboard — Visualization	UX Design — Real-time Threat Visualization
+📟 License
+This project is for educational purposes as part of the SOAR Project 1 at SUT. Feel free to use or adapt it for learning or non-commercial purposes.
+
+[ SECURITY_NOTICE ] CyberNestSoar is currently under developement. Soon! Monitoring all incoming telemetry for anomalous signatures.
+++++++++++++++++++++++
+
+Student Burnout Analysis – Final Project
+Course: CET242 – Data Analytics & Visualization (Spring 2026)
+
+📋 Project Overview
+This project investigates academic burnout among university students using data-driven analysis and visualization. The analysis identifies root causes, quantifies burnout prevalence, and proposes actionable interventions for universities.
+
+Dataset: Student Depression Dataset (28,000+ rows from Kaggle)
+Tools: Python (pandas, numpy, matplotlib, seaborn) + Power BI
+Status: ✅ Complete
+
+🎯 Problem Statement
+A significant share of university students suffer from academic burnout — a state of emotional exhaustion, cynicism toward studies, and reduced academic efficacy — which is associated with lower CGPA, sleep deprivation, and higher depression risk.
+
+Key Questions Answered
+What share of students fall into the High Burnout group?
+Which factors (academic pressure, sleep, finance, satisfaction) most strongly separate Low vs High burnout students?
+Is depression a consequence of high burnout, or independent of it?
+📊 Key Findings
+KPIs
+Metric	Value
+Average CGPA	7.14
+High Burnout Rate	33.3%
+Average Sleep Hours	6.49
+Average Academic Pressure	3.10 (out of 5)
+Depression Rate	53.2%
+Root Causes (Top 5)
+High Academic Pressure (2.37 → 3.93 across burnout levels)
+Long Study Hours + Sleep Deprivation (4.25h → 9.64h study; 6.70h → 6.06h sleep)
+Low Study Satisfaction (3.78 → 1.98)
+Financial Stress (2.51 → 3.74)
+Emotional Exhaustion → Depression (25% → 89% depression rate)
+Hypothesis Testing Results
+✅ H1 Accepted: Students who sleep fewer hours have higher burnout levels
+✅ H2 Accepted: Higher academic pressure is associated with higher burnout
+✅ H3 Accepted: Students with depression are more likely in High burnout group
+📁 Project Structure
+studentsburnout.ipynb
+├── Step 1: Problem Definition
+├── Step 2: Dataset Selection
+├── Step 3: Data Understanding & Preparation
+├── Step 4: Key Performance Indicators (KPIs)
+├── Step 5: Hypothesis-Driven Analysis
+├── Step 6: Exploratory Data Analysis (EDA)
+├── Step 7: Identifying Root Causes
+├── Step 8: Insights & Recommendations
+└── Step 9: Power BI Dashboard Export
+🔧 Installation & Setup
+Prerequisites
+Python 3.8+
+Jupyter Notebook
+Required libraries: pandas, numpy, matplotlib, seaborn
+Installation
+pip install pandas numpy matplotlib seaborn
+jupyter notebook studentsburnout.ipynb
+Dataset
+The dataset (Student Depression Dataset.csv) is sourced from Kaggle:
+
+Source: hopesb/student-depression-dataset
+Size: ~28,000 rows × 11 columns
+License: Check Kaggle terms
+📈 Burnout Score Methodology
+The project constructs a Burnout Score (0-10) using the Maslach 3-dimension model:
+
+Dimension	Components	Weight
+Emotional Exhaustion	Academic Pressure + Work/Study Hours + Financial Stress	50%
+Cynicism	Inverse of Study Satisfaction	30%
+Reduced Efficacy	10 - CGPA (low GPA → low efficacy)	20%
+Students are then classified into three equal-sized groups:
+
+🟢 Low Burnout (Burnout Score: 0–3.33)
+🟡 Medium Burnout (Burnout Score: 3.33–6.67)
+🔴 High Burnout (Burnout Score: 6.67–10)
+📊 Data Cleaning & Preparation
+Steps Performed
+Dropped low-information columns: id, Profession, Work Pressure, Job Satisfaction
+Handled missing values: Filled 3 missing Financial Stress values with median
+Renamed columns: Removed spaces and special characters
+Encoded categorical variables: SuicidalThoughts, FamilyHistory → binary
+Converted Sleep Duration: Text buckets → numeric hours
+Output
+Original: 28,000 rows × 11 columns
+Cleaned: 28,000 rows × 20 enriched columns
+💡 Key Insights & Recommendations
+Insight 1: Academic Pressure is the Strongest Driver
+Data: High Burnout students have 66% higher academic pressure (3.93 vs 2.37)
+Recommendation: Implement workload management policies; limit high-weight assessments per week
+Insight 2: Excessive Study Hours + Sleep Deprivation
+Data: High Burnout students study 9.64h/day but sleep only 6.06h (vs 4.25h/7h for Low Burnout)
+Recommendation: Run awareness campaigns; recommend max 6–7 study hours/day; offer sleep hygiene workshops
+Insight 3: Low Study Satisfaction Signals Early Disengagement
+Data: Study Satisfaction drops from 3.78 → 1.98 as burnout increases
+Recommendation: Conduct mid-semester satisfaction surveys; review low-satisfaction courses; expand peer mentoring
+Insight 4: Financial Stress Amplifies Other Factors
+Data: Financial Stress rises from 2.51 → 3.74
+Recommendation: Expand need-based financial support; offer micro-grants; provide financial counseling
+Insight 5: Burnout Predicts Depression
+Data: Depression rate jumps from 25% → 89% across burnout levels
+Recommendation: Implement early-warning system; auto-refer high-risk students to counseling; normalize mental health support
+📊 Power BI Dashboard
+A Power BI Desktop dashboard has been created to visualize the analysis interactively.
+
+Dashboard Components
+KPI Cards: Average CGPA, High Burnout Rate, Average Sleep Hours, Depression Rate
+Burnout Distribution: Pie chart showing Low/Medium/High breakdown
+Root Cause Drivers: Bar charts for Academic Pressure, Sleep Hours, Study Satisfaction, Financial Stress
+Hypothesis Testing Results: Visual confirmation of H1, H2, H3
+Filters & Slicers: By Gender, City, Degree, Burnout Level
+Heatmaps: Academic Pressure × Burnout; Depression × Burnout
+Data Source
+File: student_burnout_clean.csv (exported from Step 9 of the notebook)
+Refresh: Manual (export new CSV from notebook if data updates)
+🔄 Causal Chain
+High Academic Pressure + Financial Stress
+        ↓
+Longer Work/Study Hours
+        ↓
+Less Sleep & Recovery Time
+        ↓
+Higher Emotional Exhaustion
+        ↓
+Lower Study Satisfaction → Higher Cynicism
+        ↓
+Higher Burnout Score → Higher Depression Risk
+Note: This shows strong associations, not proven medical causation. A controlled study would be needed to confirm causal direction.
+
+📝 Data Dictionary
+Column	Type	Description
+Gender	Categorical	Male / Female
+Age	Numeric	Student age (years)
+City	Categorical	Location of student
+Degree	Categorical	Program level (UG, PG, etc.)
+AcademicPressure	Numeric (1-5)	Perceived academic workload intensity
+StudySatisfaction	Numeric (1-5)	Satisfaction with studies
+CGPA	Numeric (0-10)	Cumulative GPA
+SleepDuration	Categorical	Sleep duration bucket
+SleepDuration_num	Numeric	Mapped sleep hours
+WorkStudyHours	Numeric	Daily study/work hours
+FinancialStress	Numeric (1-5)	Financial pressure level
+SuicidalThoughts	Categorical	Yes/No
+FamilyHistory	Categorical	Yes/No (mental illness)
+Depression	Binary (0/1)	Depression diagnosis
+EmotionalExhaustion	Numeric (0-10)	Burnout dimension 1
+Cynicism	Numeric (0-10)	Burnout dimension 2
+ReducedEfficacy	Numeric (0-10)	Burnout dimension 3
+Burnout_Score	Numeric (0-10)	Composite burnout metric
+Burnout_Level	Categorical	Low / Medium / High
+🚀 How to Use This Project
+For Educators & University Administrators
+Review the Root Causes section to identify high-impact intervention points
+Use the Recommendations table to prioritize workload management and financial support
+Reference the KPIs to benchmark your institution's burnout rate against the dataset
+For Researchers
+Examine the Burnout Score Methodology to replicate or adapt the model
+Review the Hypothesis Testing section for evidence-based patterns
+Use the Causal Chain as a starting point for deeper causal inference studies
+For Students
+Recognize the burnout symptoms (high pressure + low satisfaction + poor sleep)
+Use the Recommendations to adopt healthier study habits
+Reach out to counseling services if experiencing 2+ burnout symptoms
+📌 Limitations
+No direct burnout label in dataset — burnout score is constructed using the Maslach model
+Cross-sectional data — associations shown, but causality not proven
+Self-reported measures — subject to response bias
+Geographic/demographic scope — dataset may not represent all universities globally
+📚 References
+Burnout Model: Maslach, C. (1998). A multidimensional theory of burnout
+Dataset Source: Kaggle – hopesb/student-depression-dataset
+Course: CET242 – Data Analytics & Visualization (Spring 2026)
++++++++++++++++++
+🛒 Online Shopping Cart System
+University Database Project using MySQL & PHP
+📌 Project Overview
+This is a complete university-level database project simulating an online shopping cart system. It includes:
+
+A fully normalized relational database (3NF)
+Sample data using phase_2.sql
+A PHP web interface that displays all data and analytics from the database
+The system allows users to:
+
+View products by category
+Add items to a cart
+Place orders and track shipping
+Make and view payments
+This project demonstrates essential database concepts: Entity-Relationship Diagram (ERD), Normalization, SQL Queries, and Foreign Keys — all integrated into a functional mini e-commerce system.
+
+📄 SQL Files Included
+phase_1.sql: Initial unnormalized database schema
+Contains a basic and non-normalized version of the database structure.
+📌 Example: A single Users table may store multiple phone numbers in one column, and product categories may be written as plain text without a reference table.
+
+phase_2.sql: Final normalized database schema (3NF)
+Includes fully normalized tables with proper relationships and foreign keys.
+🎯 Example: Phone numbers are moved to a separate UserPhoneNumbers table, and product categories are stored in a dedicated Category table.
+
+🧱 Database Schema
+The schema includes the following normalized tables:
+
+Table	Description
+Users	Stores user information
+UserPhoneNumbers	Supports multiple phone numbers per user
+Category	Lists product categories
+Product	Contains product details
+Cart	Shopping cart for each user
+CartItem	Items added to a user's cart
+ShippingAddress	Shipping info for orders
+Orders	Placed orders
+OrderItem	Items in each order
+Payment	Payment info related to orders
+📄 SQL file: phase_2.sql – contains both schema creation and sample data.
+
+🔄 Normalization
+The database design follows Third Normal Form (3NF):
+
+Normal Form	Description
+1NF	Atomic columns (e.g., phone numbers stored in separate rows)
+2NF	Removed partial dependencies via separate tables (e.g., OrderItem)
+3NF	Removed transitive dependencies (e.g., shipping data stored separately)
+🖥️ Web Interface (PHP + MySQL)
+📁 Main files:
+
+index.php: connects to the database and displays data
+conn.php: holds database connection settings
+style.css: optional styling file
+What’s Displayed:
+✅ All users and phone numbers
+📦 Product listings with price and stock
+🛒 Carts and their contents
+📤 Orders and shipping details
+💳 Payments and statuses
+📊 Cart and Order totals
+💎 Most expensive product
+✅ Products currently in stock
+Everything is rendered dynamically using mysqli queries and printed as HTML tables.
+
+🧠 Challenges & Lessons Learned
+🔧 Challenges:
+Designing a real-world normalized schema
+Maintaining referential integrity across all relations
+Creating SQL queries to calculate totals and join data across multiple tables
+Building a PHP page that loops through queries and renders HTML
+💡 Lessons:
+Normalization is powerful for reducing data redundancy and errors
+JOINs are critical for combining data across related tables
+PHP + MySQL can simulate real e-commerce platforms with basic effort
+Understanding how back-end databases power user-facing apps
+🚀 How to Run Locally
+Install XAMPP, WAMP, or any local PHP + MySQL server
+Import phase_2.sql using phpMyAdmin or MySQL CLI
+Place the project files (index.php, conn.php, style.css) in your htdocs/ folder
+Open browser and go to:
+👉 http://localhost/index.php
+🧾 Example Data Used
+2 Users with multiple phone numbers
+Products: Laptop, Headphones, Novel
+Categories: Electronics, Books
+Orders with associated items, shipping addresses, and payments
+The database includes real relational behavior, such as:
+
+Cascade delete between users and phones
+Links between products and carts/orders
+Payment status tracking
+📅 Project Info
+👩‍💻 Developed by: Nayra Ahmed, Habiba Karam
+🏛️ University: El Sewedy University of technology
+📘 Course: CET141 _ Database Management Systems
+📆 Date: 10 May 2025
+🎓 This project was created as a final submission for the Database course, applying theory to a real-world scenario through MySQL and PHP.
++++++++++++++++
+Simple Web Server
+A lightweight web server built using Python's socket programming and threading. It handles multiple client requests, serves static HTML content, and includes a dynamic status endpoint showing server uptime.
+
+🔧 Features
+Serves HTML pages over HTTP
+Handles multiple requests using threading
+Dynamic /status endpoint with live server uptime
+Simple routing and error handling (404)
+Configurable via config.json
+🛠️ Technologies Used
+Python 3
+Sockets
+Threading
+HTML
+JSON
+📂 Project Structure
+├── server.py              # Main server logic
+├── config.json            # Configurable server settings
+├── HelloWorld.html        # Default homepage
+├── status.html            # Dynamic uptime page
+├── 404.html               # Error page for invalid routes
+├── README.md              # Project documentation
+⚙️ How to Run
+Make sure you have Python 3.x installed.
+(Optional) Modify config.json to change port or default page.
+Run the server:
+py server.py
+Open your browser and go to:
+http://localhost:6789/
+🌐 Routes
+Route	Description
+/	Loads the default homepage
+/status	Shows server uptime
+/invalid	Triggers custom 404 page
+/yourfile.html	Loads any available HTML file
+📈 Impact
+This project provides a clear understanding of how web servers work at a low level, offering hands-on experience with:
+
+HTTP requests/responses
+Socket communication
+Multi-threaded request handling
+📎 License
+This project is for educational purposes and open for improvement or extension.
++++++++++++++++
+Student Grades Management System
+This is a simple yet powerful Python-based system to manage students, courses, and grades — designed as a university project.
+
+✅ Features
+👨‍🏫 Teacher Mode
+
+Add / Edit / Delete students
+Add / Update / Delete courses
+Add grades
+Calculate GPA
+Export student or course data to CSV
+👩‍🎓 Student Mode
+
+View registered courses
+View grades
+Calculate personal GPA
+View passed & failed courses
+Export personal data to CSV
+🧠 GPA Grading Scale
+Grade	Points
+A+	4.3
+A	4.0
+A−	3.7
+B+	3.3
+B	3.0
+B−	2.7
+...	...
+💾 Files Included
+project.py → main Python script
+students_file.json → students' data file (auto generated)
+CSV files (all_students.csv, student_data.csv, course_data.csv) → exports created on demand
++++++++++++++++
+HR Analytics Project
+🎯 Project Overview
+A comprehensive data analytics project focused on analyzing human resources data and predicting employee attrition. This project combines data analysis and machine learning techniques to extract valuable insights that help HR management make data-driven decisions.
+
+🔗 Cloud Integration: This project is integrated with Databricks for cloud-based data processing. All outputs (models, reports, and visualizations) are stored and managed in Databricks.
+
+📋 Key Objectives
+Predict Employee Attrition: Build predictive models to identify employees at risk of leaving
+Performance Analysis: Measure and analyze various employee performance metrics
+Employee Segmentation: Group employees into similar clusters (Clustering)
+Extract Insights: Discover patterns and factors affecting employee attrition
+Decision Support: Provide interactive dashboards for easy decision-making
+📁 Project Structure
+hrAnalysis-cloudData/
+│
+├── README.md                         # Project documentation
+├── requirements.txt                  # Required Python packages
+├── main.py                           # Main entry point to run the entire pipeline
+│
+├── data/
+│   ├── raw/
+│   │   └── WA_Fn-UseC_-HR-Employee-Attrition.csv  # Raw data
+│   └── processed/                    # Cleaned and processed data
+│
+├── src/                              # Main project library
+│   ├── __init__.py
+│   ├── config.py                     # Configuration, constants, and paths
+│   ├── preprocessing.py              # Data cleaning and preparation
+│   ├── eda.py                        # Exploratory Data Analysis (EDA)
+│   ├── features.py                   # Feature Engineering
+│   ├── attrition_model.py            # Employee Attrition Prediction Model
+│   ├── performance_model.py          # Performance Evaluation Model
+│   ├── clustering.py                 # Clustering Analysis
+│   └── insights.py                   # Insights and Reports Generation
+│
+├── dashboard/                        # Interactive Dashboards
+│   └── HR_Analytics.pbix             # Power BI Dashboard
+│
+├── figures/                          # Visualizations and Charts
+├── models/                           # Trained and Saved Models
+├── reports/                          # Generated Reports and Results
+├── docs/                             # Additional Documentation
+│   ├── final_report.pdf              # Final Project Report
+│   └── presentation.pptx             # Presentation Slides
+└── labs/                             # Experiments and Testing Files
+🛠️ Technologies and Libraries Used
+Python 3.8+: Core programming language
+Pandas: Data manipulation and analysis
+NumPy: Advanced numerical operations
+Scikit-learn: Machine learning models
+Matplotlib & Seaborn: Data visualizations
+Power BI: Interactive dashboards
+Databricks: Cloud platform for data processing and storage
+☁️ Databricks Integration
+This project leverages Databricks as the primary cloud platform for:
+
+Data Processing: Distributed data processing and transformation
+Model Training: Training machine learning models at scale
+Output Storage: All generated models, reports, and visualizations are stored in Databricks
+Collaboration: Cloud-based environment for team collaboration
+Output Location
+All project outputs are automatically generated and stored in Databricks:
+
+📊 Trained models and artifacts
+📈 Generated reports and analytics
+📋 Processed datasets
+📉 Visualizations and charts
+📊 Dataset Used
+The project uses the HR Employee Attrition dataset which includes:
+
+Employee information (age, salary, job title, etc.)
+Performance and job satisfaction metrics
+Employee attrition status (left or stayed)
+🚀 How to Run the Project
+Installation Requirements
+# Install required packages
+pip install -r requirements.txt
+Run the Complete Pipeline
+# Run the entire project
+python main.py
+Note: When running in Databricks, outputs are automatically saved to your Databricks workspace. Check the Databricks ML Registry and workspace folders for generated artifacts.
+
+📂 Accessing Outputs in Databricks
+After running the pipeline, find your outputs:
+
+Models: Check MLflow Registry or /Users/[username]/models/
+Reports: Available in /Workspace/[project-path]/reports/
+Processed Data: Stored in Databricks Tables or Delta Lake
+Visualizations: Accessible through Databricks Notebooks
+📈 Project Outputs
+All project outputs are generated and stored in Databricks:
+
+Predictive Models:
+
+Employee Attrition Prediction Model (saved in Databricks MLflow)
+Performance Evaluation Model (saved in Databricks MLflow)
+Reports and Analysis:
+
+List of high-risk employees
+Employee segmentation into personas
+Key insights and recommendations
+CSV exports available in Databricks workspace
+Interactive Dashboards:
+
+Power BI dashboard for data visualization and results
+Databricks SQL analytics for real-time monitoring
+Processed Data:
+
+Cleaned and feature-engineered datasets
+Model predictions and scores
+👥 Project Team
+A collaborative project by Computer Science Year 2, Semester 2 students
+
+📝 License and Notes
+This project is for educational and analytical purposes.
+
+Last Updated: May 2026
