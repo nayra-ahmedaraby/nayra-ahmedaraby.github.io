@@ -1,20 +1,21 @@
 
 import React from 'react';
 import { MapPin, Phone, Mail, Target } from 'lucide-react';
+import SectionHeading from './SectionHeading';
 
 const About = () => {
   return (
     <section id="about" className="py-20 px-6">
       <div className="container mx-auto max-w-6xl">
-        <h2 className="text-4xl font-bold text-white text-center mb-16">
-          About Me
-        </h2>
+        <SectionHeading title="About Me" />
         
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
               <div className="flex items-center gap-3 mb-4">
-                <Target className="text-blue-400" size={24} />
+                <div className="p-2.5 rounded-xl bg-blue-400/10 border border-blue-400/20">
+                  <Target className="text-blue-400" size={24} />
+                </div>
                 <h3 className="text-2xl font-semibold text-white">Career Objective</h3>
               </div>
               <p className="text-gray-300 leading-relaxed">
@@ -50,8 +51,8 @@ const About = () => {
                     <span className="text-gray-300">Arabic</span>
                     <span className="text-blue-400">Native</span>
                   </div>
-                  <div className="w-full bg-gray-700 rounded-full h-2">
-                    <div className="bg-blue-400 h-2 rounded-full w-full"></div>
+                  <div className="w-full bg-white/10 rounded-full h-2.5">
+                    <div className="bg-gradient-to-r from-blue-400 to-purple-400 h-2.5 rounded-full w-full"></div>
                   </div>
                 </div>
                 <div>
@@ -59,8 +60,8 @@ const About = () => {
                     <span className="text-gray-300">English</span>
                     <span className="text-blue-400">B2</span>
                   </div>
-                  <div className="w-full bg-gray-700 rounded-full h-2">
-                    <div className="bg-blue-400 h-2 rounded-full w-3/4"></div>
+                  <div className="w-full bg-white/10 rounded-full h-2.5">
+                    <div className="bg-gradient-to-r from-blue-400 to-purple-400 h-2.5 rounded-full w-3/4"></div>
                   </div>
                 </div>
                 <div>
@@ -68,8 +69,8 @@ const About = () => {
                     <span className="text-gray-300">French</span>
                     <span className="text-blue-400">Intermediate</span>
                   </div>
-                  <div className="w-full bg-gray-700 rounded-full h-2">
-                    <div className="bg-blue-400 h-2 rounded-full w-2/3"></div>
+                  <div className="w-full bg-white/10 rounded-full h-2.5">
+                    <div className="bg-gradient-to-r from-blue-400 to-purple-400 h-2.5 rounded-full w-2/3"></div>
                   </div>
                 </div>
                 <div>
@@ -77,8 +78,8 @@ const About = () => {
                     <span className="text-gray-300">German</span>
                     <span className="text-blue-400">Beginner</span>
                   </div>
-                  <div className="w-full bg-gray-700 rounded-full h-2">
-                    <div className="bg-blue-400 h-2 rounded-full w-1/3"></div>
+                  <div className="w-full bg-white/10 rounded-full h-2.5">
+                    <div className="bg-gradient-to-r from-blue-400 to-purple-400 h-2.5 rounded-full w-1/3"></div>
                   </div>
                 </div>
               </div>

@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Smooth in-page navigation with offset for the fixed navbar */
+html {
+  scroll-behavior: smooth;
+}
+section[id] {
+  scroll-margin-top: 4.5rem;
+}
+
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. */
 
 @layer base {

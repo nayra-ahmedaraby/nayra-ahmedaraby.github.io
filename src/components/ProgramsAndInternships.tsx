@@ -1,5 +1,6 @@
 import React from 'react';
 import { Briefcase, Award, Calendar } from 'lucide-react';
+import SectionHeading from './SectionHeading';
 
 const ProgramsAndInternships = () => {
   const programs = [
@@ -8,7 +9,7 @@ const ProgramsAndInternships = () => {
       type: "Research Program",
       status: "Current",
       duration: "2026",
-      description: "Accepted participant in one of Asia's most prestigious AI research programs at Matsuo Laboratory, University of Tokyo. Conducting world-class research on deep learning, artificial intelligence, and innovation ecosystem development. Collaborating with leading researchers in AI and tech innovation.",
+      description: "Accepted into the prestigious Matsuo Lab AI research program at the University of Tokyo — researching deep learning and AI alongside leading researchers.",
       achievements: ["Research in AI & Deep Learning", "Innovation Ecosystem Development", "International Research Collaboration"]
     },
     {
@@ -16,7 +17,7 @@ const ProgramsAndInternships = () => {
       type: "Google Training",
       status: "Completed",
       duration: "April - May 2026",
-      description: "Selected as one of 5,000 developers in Egypt for this exclusive Google AI training program supported by ITI. Received free access to Google Cloud Platform (GCP) and intensive training from Google experts on latest AI technologies including generative AI, machine learning, and cloud computing. Weekly live sessions with hands-on labs.",
+      description: "Selected as one of 5,000 developers in Egypt (supported by ITI) for Google's AI program — hands-on training in generative AI, machine learning, and Google Cloud, with weekly live labs.",
       achievements: ["Free GCP Credits", "Training from Google Experts", "ITI Recognized Program"]
     },
     {
@@ -24,7 +25,7 @@ const ProgramsAndInternships = () => {
       type: "Leadership Program",
       status: "Completed",
       duration: "2025 - 2026",
-      description: "Selected global participant in a prestigious leadership and personal development program affiliated with Harvard. Focused on social impact, innovation, and strategic thinking. Built networks with leaders and innovators from around the world.",
+      description: "Selected as a global participant in the Harvard-affiliated Aspire Leaders Program — focused on leadership, social impact, and strategic thinking with a worldwide cohort.",
       achievements: ["Global Leadership Network", "Social Impact Focus", "Harvard Partnership"]
     },
     {
@@ -32,7 +33,7 @@ const ProgramsAndInternships = () => {
       type: "Program",
       status: "Completed",
       duration: "2025",
-      description: "Intensive innovation and entrepreneurship bootcamp designed to empower students with creative problem-solving and startup building skills. Learned methodologies for identifying market opportunities and developing viable business models.",
+      description: "Innovation and entrepreneurship bootcamp (TIEC & iSpark) on creative problem-solving, spotting market opportunities, and building viable startup models.",
       achievements: ["Startup Building Skills", "Innovation Methodology", "Entrepreneurship Concepts"]
     },
     {
@@ -40,7 +41,7 @@ const ProgramsAndInternships = () => {
       type: "Program",
       status: "Current",
       duration: "2025 - 2026",
-      description: "Active member of AI Committee collaborating with peers on high-impact AI projects and national initiatives. Participated in policy discussions and contributed to AI-related activities for youth empowerment in Egypt.",
+      description: "Active member of the AI Committee — collaborating on national AI initiatives and youth-empowerment activities in Egypt.",
       achievements: ["National AI Committee", "Policy Contribution", "Youth Empowerment"]
     },
     {
@@ -48,7 +49,7 @@ const ProgramsAndInternships = () => {
       type: "Internship",
       status: "Completed",
       duration: "2025",
-      description: "Technical internship with focus on financial data analysis and visualization. Worked on real-world financial datasets, learned the complete work lifecycle, and applied data science techniques to banking and finance domain challenges.",
+      description: "Technical internship in financial data analysis and visualization — applying data science to real banking and finance datasets.",
       achievements: ["Financial Data Analysis", "Real-World Experience", "Domain Knowledge"]
     },
     {
@@ -56,7 +57,7 @@ const ProgramsAndInternships = () => {
       type: "Internship",
       status: "Completed",
       duration: "2024 - 2025",
-      description: "Introductory technical internship focusing on applied technology, hands-on industry experience, and practical applications of data science and AI. Gained exposure to professional development practices and tech industry workflows.",
+      description: "Introductory technical internship — hands-on exposure to applied data science, AI, and professional tech workflows.",
       achievements: ["Hands-On Tech Experience", "Data Science Application", "Industry Exposure"]
     },
     {
@@ -64,7 +65,7 @@ const ProgramsAndInternships = () => {
       type: "Exchange Program",
       status: "Completed",
       duration: "2024",
-      description: "Participated in a short-term international exchange program emphasizing leadership development and cultural learning. Engaged with diverse perspectives and built international connections.",
+      description: "Short-term international exchange focused on leadership development and cross-cultural learning.",
       achievements: ["Cultural Learning", "Leadership Development", "International Network"]
     }
   ];
@@ -88,6 +89,18 @@ const ProgramsAndInternships = () => {
     }
   };
 
+  const getAccentBorder = (type: string) => {
+    switch(type) {
+      case 'Program': return 'border-l-blue-400';
+      case 'Internship': return 'border-l-purple-400';
+      case 'Exchange Program': return 'border-l-green-400';
+      case 'Research Program': return 'border-l-red-400';
+      case 'Google Training': return 'border-l-yellow-400';
+      case 'Leadership Program': return 'border-l-indigo-400';
+      default: return 'border-l-gray-400';
+    }
+  };
+
   const getStatusColor = (status: string) => {
     switch(status) {
       case 'Current':
@@ -100,17 +113,18 @@ const ProgramsAndInternships = () => {
   };
 
   return (
-    <section className="py-20 px-6">
+    <section id="programs" className="py-20 px-6">
       <div className="container mx-auto max-w-6xl">
-        <h2 className="text-4xl font-bold text-white text-center mb-12">
-          Programs & Internships
-        </h2>
+        <SectionHeading
+          title="Programs & Internships"
+          subtitle="Selective programs, research, and internships I've taken part in — from the University of Tokyo to Google and Harvard-affiliated programs."
+        />
 
         <div className="grid md:grid-cols-2 gap-8">
           {programs.map((item, index) => (
             <div
               key={index}
-              className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 group hover:scale-105"
+              className={`bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 border-l-4 ${getAccentBorder(item.type)} hover:bg-white/20 transition-all duration-300 group hover:scale-105`}
             >
               <div className="flex items-start justify-between mb-4">
                 <div className="flex-1">

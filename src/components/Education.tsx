@@ -1,5 +1,6 @@
 import React from 'react';
-import { GraduationCap, Award, Calendar, Star, Target, Zap } from 'lucide-react';
+import { GraduationCap, Award, Calendar, Star, Target } from 'lucide-react';
+import SectionHeading from './SectionHeading';
 
 const Education = () => {
   const certifications = [
@@ -63,24 +64,15 @@ const Education = () => {
     }
   ];
 
-  const learningGoals = [
-    { area: "Computer Vision", status: "In Progress" },
-    { area: "Robotics", status: "In Progress" },
-    { area: "Advanced Deep Learning", status: "Certified" },
-    { area: "Python for AI", status: "Certified" }
-  ];
-
 
 
   return (
-    <section className="py-20 px-6">
+    <section id="education" className="py-20 px-6">
       <div className="container mx-auto max-w-6xl">
-        <h2 className="text-4xl font-bold text-white text-center mb-4">
-          Education & Achievements
-        </h2>
-        <p className="text-gray-300 text-center mb-16 max-w-2xl mx-auto">
-          Academic excellence combined with continuous professional development and community engagement
-        </p>
+        <SectionHeading
+          title="Education & Achievements"
+          subtitle="Academic excellence combined with continuous professional development and community engagement"
+        />
 
         {/* Main Education Card */}
         <div className="mb-12 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-2xl p-10 border border-blue-400/50">
@@ -122,7 +114,9 @@ const Education = () => {
           {/* Certifications Section */}
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
             <div className="flex items-center gap-3 mb-6">
-              <Star className="text-yellow-400" size={28} />
+              <div className="p-2.5 rounded-xl bg-yellow-400/10 border border-yellow-400/20">
+                <Star className="text-yellow-400" size={24} />
+              </div>
               <h3 className="text-2xl font-bold text-white">Certifications & Awards</h3>
             </div>
 
@@ -146,7 +140,9 @@ const Education = () => {
           {/* Activities Section */}
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
             <div className="flex items-center gap-3 mb-6">
-              <Target className="text-green-400" size={28} />
+              <div className="p-2.5 rounded-xl bg-green-400/10 border border-green-400/20">
+                <Target className="text-green-400" size={24} />
+              </div>
               <h3 className="text-2xl font-bold text-white">Leadership & Activities</h3>
             </div>
 
@@ -171,29 +167,6 @@ const Education = () => {
           </div>
         </div>
 
-        {/* Continuous Learning Section */}
-        <div className="bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-2xl p-8 border border-purple-400/50">
-          <div className="flex items-center gap-3 mb-6">
-            <Zap className="text-purple-400" size={28} />
-            <h3 className="text-2xl font-bold text-white">Currently Learning & Future Goals</h3>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {learningGoals.map((goal, index) => (
-              <div key={index} className="bg-white/10 rounded-lg p-4 border border-purple-400/30">
-                <p className="text-purple-300 font-semibold text-sm">{goal.area}</p>
-                <div className="mt-2 flex items-center justify-between">
-                  <span className={`text-xs px-2 py-1 rounded-full ${
-                    goal.status === 'Certified' 
-                      ? 'bg-green-500/20 text-green-400' 
-                      : 'bg-blue-500/20 text-blue-400'
-                  }`}>
-                    {goal.status}
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   );

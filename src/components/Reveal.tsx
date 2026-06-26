@@ -1,0 +1,44 @@
+import { useEffect, useRef, useState, ReactNode } from 'react';
+
+interface RevealProps {
+  children: ReactNode;
+  /** Slide up while fading in. Disable for sections that contain `position: fixed`
+   *  children (a transform on the ancestor would break fixed positioning). */
+  slide?: boolean;
+  className?: string;
+}
+
+const Reveal = ({ children, slide = true, className = '' }: RevealProps) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          obs.disconnect();
+        }
+      },
+      { threshold: 0.12, rootMargin: '0px 0px -8% 0px' }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+
+  const hidden = slide ? 'opacity-0 translate-y-8' : 'opacity-0';
+  const shown = 'opacity-100 translate-y-0';
+
+  return (
+    <div
+      ref={ref}
+      className={`transition-all duration-700 ease-out ${visible ? shown : hidden} ${className}`}
+    >
+      {children}
+    </div>
+  );
+};
+
+export default Reveal;

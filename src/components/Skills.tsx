@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Code, Database, Wrench, Brain, Cloud, BarChart3 } from 'lucide-react';
+import SectionHeading from './SectionHeading';
 
 const Skills = () => {
   const skillCategories = [
@@ -37,23 +38,23 @@ const Skills = () => {
   ];
 
   return (
-    <section className="py-20 px-6">
+    <section id="skills" className="py-20 px-6">
       <div className="container mx-auto max-w-6xl">
-        <h2 className="text-4xl font-bold text-white text-center mb-4">
-          Technical Skills
-        </h2>
-        <p className="text-gray-300 text-center mb-16 max-w-2xl mx-auto">
-          Expertise developed through industry internships, research programs, and innovative projects
-        </p>
+        <SectionHeading
+          title="Technical Skills"
+          subtitle="Expertise developed through industry internships, research programs, and innovative projects"
+        />
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {skillCategories.map((category, index) => (
             <div 
               key={index}
-              className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/20"
+              className="group bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/20"
             >
               <div className="flex items-center gap-3 mb-5">
-                {category.icon}
+                <div className="p-2.5 rounded-xl bg-white/10 border border-white/10 group-hover:scale-110 transition-transform">
+                  {category.icon}
+                </div>
                 <h3 className="text-lg font-semibold text-white">{category.title}</h3>
               </div>
               <div className="flex flex-wrap gap-2">
@@ -72,12 +73,12 @@ const Skills = () => {
 
         <div className="mt-16 grid md:grid-cols-3 gap-6">
           <div className="bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-2xl p-6 border border-blue-400/30">
-            <h4 className="text-lg font-semibold text-white mb-3">🏆 Expertise Areas</h4>
+            <h4 className="text-lg font-semibold text-white mb-3">🏆 Focus Areas</h4>
             <ul className="space-y-2 text-sm text-gray-300">
-              <li>✓ AI-Driven System Design</li>
-              <li>✓ Full-Stack Development</li>
-              <li>✓ Data Science & Analytics</li>
-              <li>✓ Cloud Architecture</li>
+              <li>✓ Machine Learning & AI</li>
+              <li>✓ Data Analysis & Visualization</li>
+              <li>✓ Backend & APIs</li>
+              <li>✓ Cloud & Data Tools</li>
             </ul>
           </div>
           <div className="bg-gradient-to-br from-green-500/10 to-blue-500/10 rounded-2xl p-6 border border-green-400/30">
