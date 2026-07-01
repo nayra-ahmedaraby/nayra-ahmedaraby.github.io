@@ -19,7 +19,7 @@ const About = () => {
                 <h3 className="text-2xl font-semibold text-white">Career Objective</h3>
               </div>
               <p className="text-gray-300 leading-relaxed">
-                Second-year AI & Data Science student with a 4.0 CGPA and practical experience in AI tools, 
+                Second-year AI & Data Science student with a 4.1/4.3 CGPA and practical experience in AI tools,
                 leadership, and innovation. Passionate about leveraging technology for social impact through 
                 machine learning, deep learning, and large language models. Actively involved in national tech 
                 programs and real-world AI projects.

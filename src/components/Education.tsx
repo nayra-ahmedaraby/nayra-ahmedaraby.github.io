@@ -85,7 +85,7 @@ const Education = () => {
               </div>
             </div>
             <div className="bg-gradient-to-r from-blue-400 to-purple-400 text-white px-6 py-3 rounded-full font-bold text-lg">
-              GPA: 4.0
+              GPA: 4.1 / 4.3
             </div>
           </div>
           <div className="grid md:grid-cols-2 gap-6">

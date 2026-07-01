@@ -38,15 +38,15 @@ const Hero = () => {
 
   const downloadCV = () => {
     const link = document.createElement('a');
-    link.href = asset('/Nayra%20Ahmed%20Araby%20Abdo.pdf');
-    link.download = 'Nayra Ahmed Araby Abdo.pdf';
+    link.href = asset('/Nayra_Ahmed_Araby_CV.pdf');
+    link.download = 'Nayra Ahmed Araby - CV.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
   };
 
   const stats = [
-    { value: '4.0', label: 'GPA' },
+    { value: '4.1/4.3', label: 'CGPA' },
     { value: '2×', label: "Top Achiever ('24 & '25)" },
     { value: 'Dual', label: 'SUTech × Amity Degree' },
   ];
