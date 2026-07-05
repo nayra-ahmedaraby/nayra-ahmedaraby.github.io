@@ -28,8 +28,11 @@ const Reveal = ({ children, slide = true, className = '' }: RevealProps) => {
     return () => obs.disconnect();
   }, []);
 
+  // When slide is disabled we must NOT apply any transform (not even translate-y-0):
+  // a transform on an ancestor makes position:fixed children (the Projects modal)
+  // anchor to this wrapper instead of the viewport, pushing the modal down.
   const hidden = slide ? 'opacity-0 translate-y-8' : 'opacity-0';
-  const shown = 'opacity-100 translate-y-0';
+  const shown = slide ? 'opacity-100 translate-y-0' : 'opacity-100';
 
   return (
     <div
