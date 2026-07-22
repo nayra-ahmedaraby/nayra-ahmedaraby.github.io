@@ -13,12 +13,12 @@ const Skills = () => {
     {
       icon: <Brain className="text-purple-400" size={24} />,
       title: "AI & Machine Learning",
-      skills: ["Deep Learning", "TensorFlow", "Scikit-learn", "Neural Networks", "LLMs", "Generative AI", "CSP (Constraint Satisfaction)", "Predictive Modeling"]
+      skills: ["Scikit-learn", "Neural Networks", "Generative AI", "CSP (Constraint Satisfaction)", "Predictive Modeling"]
     },
     {
       icon: <Database className="text-green-400" size={24} />,
       title: "Databases & Backends",
-      skills: ["MongoDB", "MySQL", "SQL Server", "Firebase", "FastAPI", "REST APIs", "OOP Design", "Data Structures"]
+      skills: ["MongoDB", "MySQL", "SQL Server", "FastAPI", "REST APIs", "OOP Design", "Data Structures"]
     },
     {
       icon: <BarChart3 className="text-indigo-400" size={24} />,
